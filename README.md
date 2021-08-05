@@ -20,25 +20,25 @@
 
 
 そのような精神的な疲れを少しでも軽くできればと思い、今回このテーマを選んだ。
-*悩みや気持ち、些細な事を気軽につぶやける。周囲の人には言いにくいけれど、匿名だったらつぶやいてもいいかなと思う内容などを投稿できる。
-*様々な職種・業種、勉強に取り組んでいる人たちの気持ちを共有し合うことで、励みになる。
+* 悩みや気持ち、些細な事を気軽につぶやける。周囲の人には言いにくいけれど、匿名だったらつぶやいてもいいかなと思う内容などを投稿できる。
+* 様々な職種・業種、勉強に取り組んでいる人たちの気持ちを共有し合うことで、励みになる。
 以上の機能を備えた勉強や仕事を日々頑張っている人たち専用のサイトがあれば、元気になったりモチベーションを維持できたりするのではないかと考えた。
 また、このようなサイトは記録や毎日更新するのも面倒になりそうだが、簡単に投稿できることと溜まっていくスタンプに達成感を感じ、ゆる～く続けられるようにした。
 
 ### ターゲットユーザ
-*仕事や勉強に励んでいる一般ユーザー
-*勉強や仕事のやる気が出ない方
-*勉強や今取り組んでいることを習慣化したい！モチベーションを上げたい！と思っている方
-*同じ目標、職種、気持ちなどを共有したい方
+* 仕事や勉強に励んでいる一般ユーザー
+* 勉強や仕事のやる気が出ない方
+* 勉強や今取り組んでいることを習慣化したい！モチベーションを上げたい！と思っている方
+* 同じ目標、職種、気持ちなどを共有したい方
 
 ### 主な利用シーン
 仕事・勉強の前後、休憩中
 
 ## 設計書
-ワイヤーフレーム　https://docs.google.com/presentation/d/1lruO-w8hYUFAGCIeXeR4HN249WpR6K9eoeGjhfzkfUQ/edit#slide=id.gafeaef8514_0_0
-ER図  https://app.diagrams.net/#G1_Mvl68TUz_G5DhpHU5ewIqn824xrjTjF
-テーブル定義書  https://docs.google.com/spreadsheets/d/1L2tuKlG9UZTbswoX-1roLrhdO1VgeBVr/edit#gid=4757890
-アプリケーション詳細設計書 https://docs.google.com/spreadsheets/d/1gV596mxyKh1kMoVW-0f-KNo4aC-g9NFD6uwmeQPLFMg/edit#gid=1077044460
+* ワイヤーフレーム　https://docs.google.com/presentation/d/1lruO-w8hYUFAGCIeXeR4HN249WpR6K9eoeGjhfzkfUQ/edit#slide=id.gafeaef8514_0_0
+* ER図  https://app.diagrams.net/#G1_Mvl68TUz_G5DhpHU5ewIqn824xrjTjF
+* テーブル定義書  https://docs.google.com/spreadsheets/d/1L2tuKlG9UZTbswoX-1roLrhdO1VgeBVr/edit#gid=4757890
+* アプリケーション詳細設計書 https://docs.google.com/spreadsheets/d/1gV596mxyKh1kMoVW-0f-KNo4aC-g9NFD6uwmeQPLFMg/edit#gid=1077044460
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1V2pw5JpKqhyxoF458AD1P4XkfjSffc1zv1JPqFDZ__U/edit#gid=0
