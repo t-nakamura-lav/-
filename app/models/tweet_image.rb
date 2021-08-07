@@ -1,0 +1,2 @@
+class TweetImage < ApplicationRecord
+end

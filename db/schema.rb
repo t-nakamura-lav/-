@@ -10,7 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_06_071955) do
+ActiveRecord::Schema.define(version: 2021_08_07_072140) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tweet_images", force: :cascade do |t|
+    t.string "tweet_image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tweets", force: :cascade do |t|
+    t.time "time"
+    t.text "tweet"
+    t.integer "stamp_type", default: 0
+    t.text "challenge"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_infos", force: :cascade do |t|
+    t.string "name"
+    t.string "profile_image_id"
+    t.text "introduction"
+    t.integer "age_status", default: 0
+    t.integer "job_status", default: 0
+    t.text "challenge_contents"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
