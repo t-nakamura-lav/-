@@ -1,6 +1,6 @@
 class Tweet < ApplicationRecord
 
-  has_many :tweet_images
+  has_many :tweet_images, dependent: :destroy
   has_many :comments
   belongs_to :user
 
