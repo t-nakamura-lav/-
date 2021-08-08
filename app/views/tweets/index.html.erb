@@ -1,6 +1,11 @@
 <div class="container">
-  <p><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %> </p>
-  <p><%= @user.name %> </p>
-  <p><%= @user.challenge %></p>
-  <p><%= @user.tweet %></p>
+  <h4 class="head-line text-center">tweet投稿一覧</h4>
+  <% @tweets.each do |tweet| %>
+  <div>
+    <p><%#= attachment_image_tag @tweet, :profile_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %> </p>
+    <p><%= tweet.user.name %> </p>
+    <p><%= tweet.challenge %></p>
+    <p><%= tweet.tweet %></p>
+  </div>
+  <% end %>
 </div>
