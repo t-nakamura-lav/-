@@ -11,7 +11,7 @@
               <%# end %>
           </li>
           <li><%= link_to "ほーむ", tweets_path,class: 'fas fa-user-plus nav-link text-light' %></li>
-          <li><%= link_to "きろく", class: 'fas fa-user-plus nav-link text-light' %></li>
+          <li><%= link_to "きろく", edit_tweet_path(@user.id),class: 'fas fa-user-plus nav-link text-light' %></li>
           <li><%= link_to "カレンダー",class: 'fas fa-user-plus nav-link text-light' %></li>
           <li><%= link_to "検索", class: 'fas fa-user-plus nav-link text-light' %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt faa-wrench nav-link badge badge-pill' %></li>
