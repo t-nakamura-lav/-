@@ -1,2 +1,11 @@
-<h1>UserInfos#show</h1>
-<p>Find me in app/views/user_infos/show.html.erb</p>
+<div class="container">
+  <h4 class="head-line text-center">マイページ</h4>
+    <p><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %> </p>
+    <p><%= @user.name %> </p>
+    <p><%= @user.age_status %>  <%= @user.job_status %></p>
+    <p><%= @user.challenge_contents %></p>
+    <p><%= @user.introduction %></p>
+    <% if @user.id == current_user.id %>
+      <%= link_to "マイページ編集", edit_user_path(@user), class: "glyphicon glyphicon-pencil btn btn-success" %>
+    <% end %>
+</div>
