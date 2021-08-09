@@ -14,7 +14,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
     # stamp_type = Tweet.stamp_types[params[:tweet][:stamp_type]]
     # @tweet.stamp_type = stamp_type
-    binding.pry
+    # binding.pry
     @tweet.save
       flash[:success] = "投稿しました"
       redirect_to complete_tweets_path
