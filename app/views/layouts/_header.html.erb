@@ -6,13 +6,13 @@
 
       <ul class="navbar-nav ml-auto navbar">
         <% if user_signed_in? %>
-          <li><%#= link_to user_info_path do %>
+          <li><%= link_to user_path(current_user.id) do %>
                 <%= current_user.name %>さん
-              <%# end %>
+              <% end %>
           </li>
           <li><%= link_to "ほーむ", tweets_path,class: 'fas fa-user-plus nav-link text-light' %></li>
           <li><%#= @user.inspect %> <%= link_to "きろく", new_tweet_path(current_user.id),class: 'fas fa-user-plus nav-link text-light' %></li>
-          <li><%= link_to "カレンダー",class: 'fas fa-user-plus nav-link text-light' %></li>
+          <li><%= link_to "カレンダー",to_log_tweet_path(current_user.id),class: 'fas fa-user-plus nav-link text-light' %></li>
           <li><%= link_to "検索", class: 'fas fa-user-plus nav-link text-light' %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt faa-wrench nav-link badge badge-pill' %></li>
         <% else %>

@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-7">
-      <h4 class="head-line text-center">マイページ編集</h4>
+    <h4 class="head-line text-center">マイページ編集</h4>
 
     <%# if @user.errors.any? %>
     <!--<ul class="error_messages">-->
@@ -13,39 +12,36 @@
     <!--<%# end %>-->
 
     <%= form_with(model:@user, url:user_path(@user.id), local: true ,method: :put) do |f| %>
-      <div class="form-group col-xs-12">
-        <%= f.label :"ニックネーム", class: "col-sm-5 control-label" %>
-        <%= f.text_field :name, class: "name col-sm-6 form-control-static name" %>
-      </div>
-      <div class="form-group col-xs-12">
-        <%= f.label :"アイコン画像", class: "col-sm-5 control-label" %>
-        <%= f.attachment_field :profile_image, placeholder: "写真・画像を選択" %>
-      </div>
-      <!--モデルに書いたenumを呼び出す-->
-      <div class="form-group col-xs-12">
-        <%= f.label :"年代", class: "col-sm-5 control-label" %>
-        <%= f.select :age_status,User.age_statuses.keys, {} %>
-      </div>
-      <div class="form-group col-xs-12">
-        <%= f.label :"職種", class: "col-sm-5 control-label" %>
-        <%= f.select :job_status,User.job_statuses.keys, {} %>
-      </div>
-      <div class="form-group col-xs-12">
-        <%= f.label :"がんばっていること", class: "col-sm-5 control-label" %>
-        <%= f.text_field :challenge_contents, class: "col-sm-11 form-control-static" %>
-      </div>
+    <div class="form-group col-xs-12">
+      <%= f.label :"ニックネーム", class: "col-sm-5 control-label" %>
+      <%= f.text_field :name, class: "name col-sm-6 form-control-static name" %>
+    </div>
+    <div class="form-group col-xs-12">
+      <%= f.label :"アイコン画像", class: "col-sm-5 control-label" %>
+      <%= f.attachment_field :profile_image, placeholder: "写真・画像を選択" %>
+    </div>
+    <!--モデルに書いたenumを呼び出す-->
+    <div class="form-group col-xs-12">
+      <%= f.label :"年代", class: "col-sm-5 control-label" %>
+      <%= f.select :age_status,User.age_statuses.keys, {} %>
+    </div>
+    <div class="form-group col-xs-12">
+      <%= f.label :"職種", class: "col-sm-5 control-label" %>
+      <%= f.select :job_status,User.job_statuses.keys, {} %>
+    </div>
+    <div class="form-group col-xs-12">
+      <%= f.label :"がんばっていること", class: "col-sm-5 control-label" %>
+      <%= f.text_field :challenge_contents, class: "col-sm-11 form-control-static" %>
     </div>
 
-    <div class="col-5">
-      <div class="form-group col-xs-12">
-        <%= f.label :"自己紹介", class: "col-sm-5 control-label" %>
-        <%= f.text_field :introduction, class: "col-md-4 form-control-static" %>
-      </div>
+    <div class="form-group col-xs-12">
+      <%= f.label :"自己紹介", class: "col-sm-5 control-label" %>
+      <%= f.text_field :introduction, class: "col-md-4 form-control-static" %>
+    </div>
 
-      <div class="actions col-xs-9 col-xs-offset-3">
-        <%= f.submit "保存してマイページへ", class: "btn btn-primary save col-xs-6" %>
-      </div>
+    <div class="actions col-xs-9 col-xs-offset-3">
+      <%= f.submit "保存してマイページへ", class: "btn btn-primary save col-xs-6" %>
+    </div>
     <% end %>
-    </div>
   </div>
 </div>
