@@ -16,8 +16,10 @@
         <%= f.text_field :challenge, class: "col-sm-11 form-control-static" %>
       </div>
       <div class="form-group col-xs-12">
-        <%#= f.label :"がんばった時間", class: "col-sm-5 control-label" %>
-        <%#= f.text_field :name, class: "name col-sm-6 form-control-static name" %>
+        <%= f.label :"がんばった時間", class: "col-sm-5 control-label" %>
+        <%= f.select :hour_attribute,Tweet.hour_attributes.keys, {} %>時間
+        <%= f.select :minute_attribute,Tweet.minute_attributes.keys, {} %>分
+        <%#= f.time_select :created_at, prompt:true, ignore_data:true, class: 'form-control' %>
       </div>
        <div class="form-group col-xs-12">
         <%= f.label :"つぶやき", class: "col-sm-5 control-label" %>

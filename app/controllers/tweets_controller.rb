@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.all
+    # 投稿を新着順＆ページング
+    @tweets = Tweet.all.order("id ASC").page(params[:page]).reverse_order
   end
 
   def show
@@ -16,7 +17,7 @@ class TweetsController < ApplicationController
     # @tweet.stamp_type = stamp_type
     # binding.pry
     @tweet.user_id = current_user.id
-    @tweet.save! 
+    @tweet.save!
       flash[:success] = "投稿しました"
       redirect_to complete_tweets_path
   end
@@ -41,7 +42,7 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-  	params.require(:tweet).permit(:stamp_type, :time, :tweet, :challenge, images: [])
+  	params.require(:tweet).permit(:stamp_type, :time, :tweet, :challenge, :hour_attribute, :minute_attribute, images: [])
   end
 
 end
