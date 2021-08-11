@@ -2,7 +2,13 @@
   <h4 class="head-line text-center">tweet投稿一覧</h4>
   <% @tweets.each do |tweet| %>
   <div>
-    <p><%#= attachment_image_tag @tweet, :profile_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %> </p>
+    <% if tweet.images.attached? %>
+      <% tweet.images.each do |image| %>
+        <%= image_tag image.variant(resize:'200x200') %>
+      <% end %>
+    <% end %>
+    <p><%= tweet.created_at.strftime('%Y/%m/%d %H:%M:%S') %></p>
+    <p><%#= tweet.time %></p>
     <p><%= tweet.user.name %> </p>
     <p><%= tweet.challenge %></p>
     <p><%= tweet.tweet %></p>

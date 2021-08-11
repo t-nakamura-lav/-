@@ -24,8 +24,8 @@
         <%= f.text_field :tweet, class: "col-sm-11 form-control-static" %>
       </div>
       <div class="form-group col-xs-12">
-        <%#= f.label :"写真", class: "col-sm-5 control-label" %>
-        <%#= f.attachment_field :profile_image, placeholder: "写真・画像を選択" %>
+        <%= f.label :"写真", class: "col-sm-5 control-label" %>
+        <%= f.file_field :images, multiple: true %>
       </div>
 
       <!--モデルに書いたenumを呼び出す-->

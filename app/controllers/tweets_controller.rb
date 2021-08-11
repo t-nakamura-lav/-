@@ -1,6 +1,5 @@
 class TweetsController < ApplicationController
   def index
-
     @tweets = Tweet.all
   end
 
@@ -16,7 +15,8 @@ class TweetsController < ApplicationController
     # stamp_type = Tweet.stamp_types[params[:tweet][:stamp_type]]
     # @tweet.stamp_type = stamp_type
     # binding.pry
-    @tweet.save
+    @tweet.user_id = current_user.id
+    @tweet.save! 
       flash[:success] = "投稿しました"
       redirect_to complete_tweets_path
   end
@@ -41,7 +41,7 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-  	params.require(:tweet).permit(:time, :tweet, :challenge)
+  	params.require(:tweet).permit(:stamp_type, :time, :tweet, :challenge, images: [])
   end
 
 end
