@@ -1,7 +1,7 @@
 class Tweet < ApplicationRecord
 
   has_many_attached :images
-  has_many :comments
+  has_many :comments, dependent: :destroy
   belongs_to :user
 
   enum hour_attribute: {  "---": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5,
