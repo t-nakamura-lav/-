@@ -69,7 +69,11 @@
             <% end %>
           </td>
           <td>
-
+             <% if comment.user == current_user %>
+            <div class="comment-delete">
+              <%= link_to "削除", tweet_comment_path(comment.tweet, comment), method: :delete %>
+            </div>
+            <% end %>
           </td>
         </tr>
       </table>
