@@ -2,9 +2,11 @@ class TweetsController < ApplicationController
   def index
     # 投稿を新着順＆ページング
     @tweets = Tweet.all.order("id ASC").page(params[:page]).reverse_order
+
   end
 
   def show
+     @tweet = Tweet.find(params[:id])
   end
 
   def new

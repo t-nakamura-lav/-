@@ -6,8 +6,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update]
 
-  resources :tweet_images, only: [:new, :create, :index, :show, :destroy]
-
   # member= resourcesでは自動生成されないものに使う。生成するroutingに:idがつく。
   # collection= resourcesでは自動生成されないものに使う。生成するroutingに:idがつかない。
   resources :tweets do

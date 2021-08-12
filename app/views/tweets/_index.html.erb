@@ -1,0 +1,19 @@
+<% tweets.each do |tweet| %>
+  <div>
+    <p><%= tweet.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+    <%= link_to user_path(tweet.user) do %>
+    <p><%= attachment_image_tag tweet.user, :profile_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %><%= tweet.user.name %> </p>
+    <% end %>
+      <%= link_to "Show", tweet_path(user), class: "glyphicon glyphicon-pencil btn btn-success" %>
+      
+    <p><%= tweet.challenge %>　　　がんばった時間　　<%= tweet.hour_attribute %>時間　<%= tweet.minute_attribute %>分</p>
+    <p><%= tweet.tweet %></p>
+    <p> <% if tweet.images.attached? %>
+          <% tweet.images.each do |image| %>
+            <%= image_tag image.variant(resize:'200x200') %>
+          <% end %>
+        <% end %>
+    </p>
+  </div>
+  <% end %>
+<%= paginate tweets %>

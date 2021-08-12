@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @tweets = @user.tweets.order("id ASC").page(params[:page]).reverse_order
   end
 
   def edit

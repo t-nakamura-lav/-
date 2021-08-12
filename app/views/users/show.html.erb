@@ -1,5 +1,7 @@
 <div class="container">
-  <h4 class="head-line text-center">マイページ</h4>
+  <div class="row">
+    <h4 class="head-line text-center">マイページ</h4>
+
     <p><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %> </p>
     <p><%= @user.name %> </p>
     <p><%= @user.age_status %>  <%= @user.job_status %></p>
@@ -8,4 +10,26 @@
     <% if @user.id == current_user.id %>
       <%= link_to "マイページ編集", edit_user_path(@user), class: "glyphicon glyphicon-pencil btn btn-success" %>
     <% end %>
+  </div>
+
+  <div class="row">
+    <% @tweets.each do |tweet| %>
+    <div>
+      <p><%= tweet.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+      <%= link_to tweet_path(tweet) do %>
+      <p><%= attachment_image_tag tweet.user, :profile_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %><%= tweet.user.name %> </p>
+      <% end %>
+      <p><%= tweet.challenge %>　　　がんばった時間　　<%= tweet.hour_attribute %>時間　<%= tweet.minute_attribute %>分</p>
+      <p><%= tweet.tweet %></p>
+      <p> <% if tweet.images.attached? %>
+            <% tweet.images.each do |image| %>
+              <%= image_tag image.variant(resize:'200x200') %>
+            <% end %>
+          <% end %>
+      </p>
+    </div>
+    <% end %>
+
+    <%= paginate @tweets %>
+  </div>
 </div>
