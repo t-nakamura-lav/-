@@ -3,6 +3,11 @@ class Tweet < ApplicationRecord
   has_many_attached :images
   has_many :comments, dependent: :destroy
   belongs_to :user
+  has_many :likes, dependent: :destroy
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
 
   enum hour_attribute: {  "---": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5,
                           "6": 6, "7": 7, "8": 8, "9": 9, "10": 10, "11": 12, "13": 14, "15": 15,

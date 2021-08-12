@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :tweets, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   enum age_status: { "---": 0, "高校生": 1, "大学生": 2, "浪人生": 3, "大学院生": 4, "専門学生": 5, "社会人": 6 },_suffix: true
 
