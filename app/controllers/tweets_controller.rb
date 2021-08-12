@@ -34,6 +34,7 @@ class TweetsController < ApplicationController
   end
 
   def to_log
+    @tweet = Tweet.find(params[:id])
   end
 
   def complete

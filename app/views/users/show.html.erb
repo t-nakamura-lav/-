@@ -7,7 +7,7 @@
 
   <div class="row">
     <div class="col-md-2 text-center">
-      <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %>
+      <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" ,class: "rounded-circle" %>
     </div>
     <div class="col-md-10 text-center">
     <p><%= @user.name %>
@@ -24,7 +24,7 @@
   <div class="row">
     <div class="col-md-2 text-center">
       <%= link_to tweet_path(tweet) do %>
-        <%= attachment_image_tag tweet.user, :profile_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %>
+        <%= attachment_image_tag tweet.user, :profile_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" ,class: "rounded-circle" %>
       <% end %>
     </div>
 
