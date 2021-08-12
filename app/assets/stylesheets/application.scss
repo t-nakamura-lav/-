@@ -18,61 +18,57 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+// ヘッダー
 header {
   background-color: #99DDFF;
+  width: 100%;
   position: relative;
+  z-index: 1500;
+  .navbar {
+    padding: 4px;
+    ul {
+      display: flex;
+      align-items: center;
+      .notification-link {
+        .nav-link {
+          padding-left: 0.2rem !important;
+          padding-right: 0.2rem !important;
+          .fa-bell {
+             position: relative;
+            .fa-circle {
+              position: absolute;
+              right: 34px;
+              top: -4px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-.brand {
-  font-weight: bold;
-  font-size: 20px; }
 
-.site-header__wrapper {
-  padding-top: 1rem;
-  padding-bottom: 1rem; }
-  @media (min-width: 600px) {
-    .site-header__wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 0;
-      padding-bottom: 0; } }
-@media (min-width: 600px) {
-  .nav__wrapper {
-    display: flex; } }
-
-@media (max-width: 599px) {
-  .nav__wrapper {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    z-index: -1;
-    background-color: #d9f0f7;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
-    .nav__wrapper.active {
-      visibility: visible;
-      opacity: 1;
-      transform: translateY(0); } }
-
-.nav__item a {
-  display: block;
-  padding: 1.5rem 1rem; }
-
-.nav__toggle {
-  display: none; }
-  @media (max-width: 599px) {
-    .nav__toggle {
-      display: block;
-      position: absolute;
-      right: 1rem;
-      top: 1rem; } }
-
-
-footer{
+// フッター
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1% 0;
   background-color: #99DDFF;
-  text-align: center;
+}
+
+
+@media screen and (max-width: 470px) {
+  .sidebar {
+
+  }
+  .matrix-task-count {
+    h6 {
+      font-size: 0.8rem;
+    }
+    .fusen {
+      width: 100%;
+    }
+  }
 }

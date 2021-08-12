@@ -1,43 +1,42 @@
-<header>
-  <div class="wrapper site-header__wrapper">
-    <a href="#" class="brand">
-      <%#= link_to image_tag("logo.png"), root_path, class: "navbar-brand", 'data-turbolinks': false %>
-      <%= link_to "ゆるわーく", root_path %>
-    </a>
-    <nav class="nav">
-      <button class="nav__toggle" aria-expanded="false" type="button">
-        menu
+<header id="header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="/"><div><%= link_to "ゆるわーく", root_path %></div></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
 
-      <ul class="nav__wrapper">
         <% if user_signed_in? %>
         <li>
           <%= link_to user_path(current_user.id) do %>
             <%= attachment_image_tag current_user, :profile_image, :fill, 50, 50, format: 'jpeg',fallback: "no_image.jpg",class: "rounded-circle" %>
           <% end %>
         </li>
-        <li class="nav__item">
-          <%= link_to "ほーむ", tweets_path,class: 'fas fa-home nav-link text-light' %>
+        <li>
+          <%= link_to " ほーむ", tweets_path,class: 'fas fa-home nav-link text-light' %>
         </li>
-        <li class="nav__item">
-          <%#= @user.inspect %> <%= link_to "　きろく", new_tweet_path(current_user.id),class: 'fas fa-edit nav-link text-light' %>
+        <li>
+          <%#= @user.inspect %> <%= link_to " きろく", new_tweet_path(current_user.id),class: 'fas fa-edit nav-link text-light' %>
         </li>
-        <li class="nav__item"><%= link_to "　カレンダー",to_log_tweet_path(current_user.id),class: 'fas fa-calendar-alt nav-link text-light' %>
+        <li><%= link_to " カレンダー",to_log_tweet_path(current_user.id),class: 'fas fa-calendar-alt nav-link text-light' %>
         </li>
-        <li class="nav__item"><%= link_to "　検索", class: 'fas fa-search nav-link text-light' %>
+        <li><%= link_to " 検索", class: 'fas fa-search nav-link text-light' %>
         </li>
-        <li class="nav__item"><%= link_to "　ログアウト", destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt faa-wrench nav-link text-light' %>
+        <li><%= link_to " ログアウト", destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt faa-wrench nav-link text-light' %>
         </li>
       <% else %>
-        <li class="nav__item"><%= link_to "　あばうと", homes_about_path,class: 'fas fa-user-plus nav-link text-light' %>
+        <li><%= link_to " あばうと", homes_about_path,class: 'fas fa-user-plus nav-link text-light' %>
         </li>
-        <li class="nav__item"><%= link_to "　新規登録", new_user_registration_path,class: 'fas fa-user-plus nav-link text-light' %>
+        <li><%= link_to " 新規登録", new_user_registration_path,class: 'fas fa-user-plus nav-link text-light' %>
         </li>
-        <li class="nav__item"><%= link_to "　ログイン", new_user_session_path,class: 'fas fa-sign-in-alt nav-link text-light' %>
+        <li><%= link_to " ログイン", new_user_session_path,class: 'fas fa-sign-in-alt nav-link text-light' %>
         </li>
       <% end %>
       </ul>
+      </div>
+    </div>
     </nav>
-  </div>
-</header>
- <script src="js/header-1.js"></script>
+  </header>
+
