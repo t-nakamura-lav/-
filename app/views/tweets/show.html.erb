@@ -1,20 +1,55 @@
 <div class="container">
-  <h4 class="head-line text-center">tweet投稿詳細</h4>
-    <div class="row">
-      <p><%= @tweet.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+  <div class="row">
+    <div class="col-md-2 text-center" style="margin: 30px 0 35px 0;">
+      <h5 style="background-color: #eeeeee;">tweet投稿詳細</h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 text-center">
       <%= link_to user_path(@tweet.user) do %>
-      <p><%= attachment_image_tag @tweet.user, :profile_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %><%= @tweet.user.name %> </p>
+        <%= attachment_image_tag @tweet.user, :profile_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %>
       <% end %>
-      <p><%= @tweet.challenge %>　　　がんばった時間　　<%= @tweet.hour_attribute %>時間　<%= @tweet.minute_attribute %>分</p>
-      <p><%= @tweet.tweet %></p>
-      <p> <% if @tweet.images.attached? %>
-            <% @tweet.images.each do |image| %>
-              <%= image_tag image.variant(resize:'200x200') %>
-            <% end %>
-          <% end %>
-      </p>
     </div>
 
+    <div class="col-md-10 text-center">
+      <table class='table table-borderless'>
+        <thead>
+          <tr>
+            <th><%= link_to @tweet.user.name, user_path(@tweet.user) %></th>
+            <th><%= @tweet.created_at.strftime('%Y/%m/%d %H:%M') %></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><%= @tweet.challenge %></td>
+            <td><%= @tweet.hour_attribute %>時間　<%= @tweet.minute_attribute %>分</td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td colspan="2"><%= @tweet.tweet %></td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td colspan="2">
+              <% if @tweet.images.attached? %>
+                <% @tweet.images.each do |image| %>
+                  <%= image_tag image.variant(resize:'300x300') %>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
+
+
 
 

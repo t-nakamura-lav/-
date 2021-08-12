@@ -17,7 +17,7 @@
       <table class='table table-borderless'>
         <thead>
           <tr>
-            <th><%= tweet.user.name %></th>
+            <th><%= link_to tweet.user.name, user_path(tweet.user) %></th>
             <th><%= tweet.created_at.strftime('%Y/%m/%d %H:%M') %></th>
           </tr>
         </thead>
