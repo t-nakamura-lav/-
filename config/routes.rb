@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   # member= resourcesでは自動生成されないものに使う。生成するroutingに:idがつく。
   # collection= resourcesでは自動生成されないものに使う。生成するroutingに:idがつかない。
   resources :tweets do
+    resource :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
+
     member do
       get 'to_log'
     end
