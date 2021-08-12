@@ -7,6 +7,7 @@ class TweetsController < ApplicationController
 
   def show
      @tweet = Tweet.find(params[:id])
+     @comment = Comment.new
   end
 
   def new
@@ -15,8 +16,6 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(tweet_params)
-    # stamp_type = Tweet.stamp_types[params[:tweet][:stamp_type]]
-    # @tweet.stamp_type = stamp_type
     # binding.pry
     @tweet.user_id = current_user.id
     @tweet.save!
