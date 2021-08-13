@@ -1,0 +1,15 @@
+<% if tweet.liked_by?(current_user) %>
+<p>
+  <%= link_to tweet_likes_path(tweet), method: :delete, remote: true do %>
+    <i class="fas fa-thumbs-up" style="color:#dd0077 ;">
+    <%= tweet.likes.count %> いいね</i>
+  <% end %>
+</p>
+<% else %>
+<p>
+  <%= link_to tweet_likes_path(tweet), method: :post, remote: true do %>
+    <i class="far fa-thumbs-up">
+    <%= tweet.likes.count %> いいね</i>
+  <% end %>
+</p>
+<% end %>
