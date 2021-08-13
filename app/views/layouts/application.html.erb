@@ -10,14 +10,17 @@
   </head>
 
   <body style="background-color: #f9f7f5;">
-    <%= render 'layouts/header' %>
+    <div class="wrapper">
+      <%= render 'layouts/header' %>
 
-    <main>
+      <main>
 
-    <%= yield %>
+      <%= yield %>
 
-    </main>
+      </main>
 
-    <%= render 'layouts/footer' %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
+
 </html>
