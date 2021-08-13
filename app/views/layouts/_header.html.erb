@@ -22,7 +22,7 @@
         </li>
         <li><%= link_to " カレンダー",to_log_tweet_path(current_user.id),class: 'fas fa-calendar-alt nav-link text-light' %>
         </li>
-        <li><%= link_to " 検索", class: 'fas fa-search nav-link text-light' %>
+        <li><%= link_to " 検索", search_users_path,class: 'fas fa-search nav-link text-light' %>
         </li>
         <li><%= link_to " ログアウト", destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt faa-wrench nav-link text-light' %>
         </li>

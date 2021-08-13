@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 text-center" style="margin: 15px 0 15px 0;">
+      <h5 style="background-color: #eeeeee;">ユーザー検索画面</h5>
+    </div>
+  </div>
+
+  <%= search_form_for @q, url: result_users_path do |f| %>
+  <div class="form-group col-xs-12">
+    <%= f.label :"ニックネーム", class: "col-sm-5 control-label" %>
+    <%= f.search_field :name_cont, class: "name col-md-5 form-control-static name" %>
+  </div>
+
+  <div class="form-group col-xs-12">
+    <%= f.label :"がんばっていること、自己紹介文", class: "col-sm-5 control-label" %>
+    <%= f.search_field :introduction_or_challenge_contents_cont, class: "name col-md-5 form-control-static name" %>
+  </div>
+
+  <div class="actions col-xs-9 col-xs-offset-3">
+    <%= f.submit "検索結果へＧＯ！", class: "btn btn-primary save col-xs-6" %>
+  </div>
+  <% end %>
+</div>

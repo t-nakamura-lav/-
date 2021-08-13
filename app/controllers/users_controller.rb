@@ -20,6 +20,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    # 検索オブジェクト
+    @q = User.ransack(params[:q])
+    
+  end
+
+  def result
+    # 検索オブジェクト
+    @q = User.ransack(params[:q])
+    # 検索結果
+    @results = @q.result(distinct: true)
+  end
+
   private
 
   def user_params

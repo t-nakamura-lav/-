@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
-    <h4 class="head-line text-center">マイページ編集</h4>
-
+    <div class="col-md-4 text-center" style="margin: 15px 0 15px 0;">
+      <h5 style="background-color: #eeeeee;">Myページ編集</h5>
+    </div>
+  </div>
     <%# if @user.errors.any? %>
     <!--<ul class="error_messages">-->
     <!--  <h3><%#= @user.errors.count %>errors prohibited this user from being saved:</h3>-->
@@ -14,7 +16,7 @@
     <%= form_with(model:@user, url:user_path(@user.id), local: true ,method: :put) do |f| %>
     <div class="form-group col-xs-12">
       <%= f.label :"ニックネーム", class: "col-sm-5 control-label" %>
-      <%= f.text_field :name, class: "name col-sm-6 form-control-static name" %>
+      <%= f.text_field :name, class: "name col-md-5 form-control-static name" %>
     </div>
     <div class="form-group col-xs-12">
       <%= f.label :"アイコン画像", class: "col-sm-5 control-label" %>
@@ -31,12 +33,12 @@
     </div>
     <div class="form-group col-xs-12">
       <%= f.label :"がんばっていること", class: "col-sm-5 control-label" %>
-      <%= f.text_field :challenge_contents, class: "col-sm-11 form-control-static" %>
+      <%= f.text_field :challenge_contents, class: "col-md-6 form-control-static" %>
     </div>
 
     <div class="form-group col-xs-12">
       <%= f.label :"自己紹介", class: "col-sm-5 control-label" %>
-      <%= f.text_field :introduction, class: "col-md-4 form-control-static" %>
+      <%= f.text_field :introduction, class: "col-md-6 form-control-static" %>
     </div>
 
     <div class="actions col-xs-9 col-xs-offset-3">
