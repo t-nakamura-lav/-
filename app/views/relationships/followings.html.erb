@@ -1,22 +1,36 @@
-<h2>Follow Users</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 text-center" style="margin: 15px 0 15px 0;">
+      <h5 style="background-color: #eeeeee;">フォロー中</h5>
+    </div>
+  </div>
+
 <% if @users.exists? %>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td>フォロー数: <%= user.followings.count %></td>
-        <td>フォロワー数: <%= user.followers.count %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% @users.each do |user| %>
+  <div class="row">
+    <div class="col-md-3 text-right">
+      <%= link_to user_path(user) do %>
+        <%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg',fallback: "no_image.jpg" ,class: "rounded-circle" %>
+      <% end %>
+    </div>
+
+    <div class="col-md-8 text-left">
+      <table class='table table-borderless'>
+        <thead>
+          <tr>
+            <th style="width: 50%"><%= link_to user.name, user_path(user) %></th>
+            <th style="width: 50%"><%= render 'relationships/follow_btn', user: user %></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><%= user.challenge_contents %></td>
+            <td><%= user.introduction %></td>
+          </tr>
+        </tbody>
+  <% end %>
+      </table>
 <% else %>
-  <p>ユーザーはいません</p>
+    <p>ユーザーはいません</p>
 <% end %>

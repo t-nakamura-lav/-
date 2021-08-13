@@ -1,5 +1,14 @@
-フォロー中
-<%= link_to user.followings.count, user_followings_path(user.id) %>
-
-フォロワー
-<%= link_to user.followers.count, user_followers_path(user.id) %>
+<tbody>
+  <tr>
+    <td>
+      <%= link_to user_followings_path(user.id) do %>
+        <%= user.followings.count %> フォロー中
+      <% end %>
+    </td>
+    <td>
+      <%= link_to user_followers_path(user.id) do %>
+        <%= user.followers.count %> フォロワー
+      <% end %>
+    </td>
+  </tr>
+</tbody>
