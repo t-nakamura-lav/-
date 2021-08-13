@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get 'homes/about'
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    resource :relationships, only: [:create, :destroy]
+      get 'followings' => 'relationships#followings', as: 'followings'
+      get 'followers' => 'relationships#followers', as: 'followers'
+  end
 
   # member= resourcesでは自動生成されないものに使う。生成するroutingに:idがつく。
   # collection= resourcesでは自動生成されないものに使う。生成するroutingに:idがつかない。
