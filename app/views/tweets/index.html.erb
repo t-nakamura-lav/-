@@ -45,6 +45,34 @@
             </td>
           </tr>
         </tbody>
+
+        <tbody>
+          <tr>
+            <td>
+              <%= link_to tweet_path(tweet) do %>
+                <p class="far fa-comment" style="color:#ff6f00 ;">
+                <%= tweet.comments.count %> コメント</p>
+              <% end %>
+            </td>
+            <td>
+              <% if tweet.liked_by?(current_user) %>
+              <p>
+                <%= link_to tweet_likes_path(tweet), method: :delete do %>
+                  <i class="fas fa-thumbs-up" style="color:#dd0077 ;">
+                  <%= tweet.likes.count %> いいね</i>
+                <% end %>
+              </p>
+              <% else %>
+              <p>
+                <%= link_to tweet_likes_path(tweet), method: :post do %>
+                  <i class="far fa-thumbs-up">
+                  <%= tweet.likes.count %> いいね</i>
+                <% end %>
+              </p>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
