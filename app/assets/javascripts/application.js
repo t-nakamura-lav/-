@@ -20,18 +20,11 @@
 //= require turbolinks
 
 //= require jquery
-//= require moment
-//= require fullcalendar
-//= require fullcalendar/lang/ja
 //= require_tree .
 
-/*global $*/
-$(document).ready(function(){
-  $('#calendar').fullCalendar({
-  });
-});
 
 //ヘッダーの高さ分だけコンテンツを下げる
+/*global $*/
 $(function() {
   var height = $("#header").height();
   $("main").css("padding-top", height);

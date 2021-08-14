@@ -74,6 +74,5 @@ gem "ransack"
 gem 'kaminari','~> 1.2.1'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-gem 'fullcalendar-rails'
-gem 'momentjs-rails'
 gem "aws-sdk-s3", require: false
+gem 'enum_help'
