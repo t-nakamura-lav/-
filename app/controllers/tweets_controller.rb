@@ -33,9 +33,6 @@ class TweetsController < ApplicationController
   def destroy
   end
 
-  def to_log
-    @tweet = Tweet.find(params[:id])
-  end
 
   def complete
   end
@@ -44,7 +41,7 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-  	params.require(:tweet).permit(:stamp_type, :time, :tweet, :challenge, :hour_attribute, :minute_attribute, images: [])
+  	params.require(:tweet).permit(:time, :tweet, :challenge, :hour_attribute, :minute_attribute, images: [])
   end
 
 end

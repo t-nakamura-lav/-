@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'calendars/show'
   devise_for :users
   root to: 'homes#top'
   get 'homes/about'
@@ -21,14 +22,12 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
 
-    member do
-      get 'to_log'
-    end
-
     collection do
       get 'complete'
     end
   end
   # post=URLが保存不可、get=URL保存可
+
+  resources :calendars
 
 end

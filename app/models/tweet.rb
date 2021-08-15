@@ -26,6 +26,4 @@ class Tweet < ApplicationRecord
                           "51": 51, "52": 52, "53": 53, "54": 54, "55": 55,
                           "56": 56, "57": 57, "58": 58, "59": 59 },_suffix: true
 
- 
-
 end
