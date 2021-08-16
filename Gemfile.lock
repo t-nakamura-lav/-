@@ -368,7 +368,11 @@ DEPENDENCIES
   ransack
   refile!
   refile-mini_magick
+  rubocop
   rubocop-airbnb
+  rubocop-performance
+  rubocop-rails
+  rubocop-rspec
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_calendar (~> 2.0)
