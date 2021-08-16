@@ -1,4 +1,4 @@
-$(".like-btn").html("<%= j(render 'likes/like-btn', tweet: @tweet) %>");
+$("#like-btn").html("<%= j(render 'likes/like-btn', tweet: @tweet) %>");
 <!--インスタンス変数は、likes_controllerのcreateアクションで定義されたものが使用できる-->
 <!--html()以降では部分テンプレートを呼び出している。-->
 

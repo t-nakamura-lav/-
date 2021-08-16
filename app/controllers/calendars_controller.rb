@@ -3,7 +3,6 @@ class CalendarsController < ApplicationController
   def show
     @calendars = Calendar.all
     @calendar = Calendar.new
-    # @stamp = Stamp.find(params[:id])
   end
 
   def create
@@ -12,10 +11,13 @@ class CalendarsController < ApplicationController
   end
 
   def destroy
-    # @calendar.destroy
-    # flash[:notice] = "スタンプを削除しました"
-    # redirect_to calendar_path(current_user.id)
+    # Calendar.destroy
+    @calendar = Calendar.find(params[:id])
+    @calendar.destroy
+    flash[:notice] = "スタンプを削除しました"
+    redirect_to calendar_path(current_user.id)
   end
+
 
   private
 

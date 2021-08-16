@@ -3,35 +3,68 @@
     <div class="col-md-4 text-center" style= "margin: 15px 0 15px 0;">
       <h5 style="background-color: #eeeeee;">Myカレンダー</h5>
     </div>
+  </div>
 
-  <%= form_with(model: @calendar, local: true) do |f| %>
-    <!--モデルに書いたenumを呼び出す-->
-    <div class="form-group col-xs-12">
-      <%= f.label :"今日のごほうびスタンプ", class: "col-sm-5 control-label" %>
-      <%= f.radio_button :stamp_type, "stamp1.png" %>
-      <%= f.radio_button :stamp_type, "stamp4.png" %>
-      <%= f.radio_button :stamp_type, "stamp3.png" %>
-      <%= f.radio_button :stamp_type, "stamp2.png" %>
-    </div>
-    <div class="actions col-xs-9 col-xs-offset-3">
-        <%= f.submit "保存", class: "btn btn-primary save col-xs-6" %>
-    </div>
-     <div class="actions col-xs-9 col-xs-offset-3">
-        <%=link_to "削除",calendar_path(current_user) , method: :delete ,class: "btn btn-primary save col-xs-6" %>
-    </div>
-  <% end %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= form_with(model: @calendar, local: true) do |f| %>
+        <div class="form-group text-center">
+          <%= f.label :"がんばった日", class: "col-sm-12 control-label" %>
+        　<%= f.date_select :start_time%>
+        </div>
 
-  <br>
-  <div class="col-md-8">
-  <%= month_calendar events: @calendars do |date, calendars| %>
-    <%= date.day %>
+        <!--モデルに書いたenumを呼び出す-->
+      <%= f.label :"今日のごほうびスタンプ", class: "col-sm-12 control-label text-center" %>
+        <table class='table table-borderless'>
+          <tbody>
+            <tr>
+              <td style="width: 50%">
+                <%= f.radio_button :stamp_type, "stamp1.png" %>
+                <%= image_tag 'stamp1.png', class: 'stamp1' %>
+              </td>
+              <td style="width: 50%">
+                <%= f.radio_button :stamp_type, "stamp4.png" %>
+                <%= image_tag 'stamp4.png', class: 'stamp1' %>
+              </td>
+            </tr>
+          </tbody>
+          <tbody>
+              <tr>
+                <td>
+                  <%= f.radio_button :stamp_type, "stamp3.png" %>
+                  <%= image_tag 'stamp3.png', class: 'stamp1' %>
+                </td>
+                <td>
+                  <%= f.radio_button :stamp_type, "stamp2.png" %>
+                  <%= image_tag 'stamp2.png', class: 'stamp1' %>
+                </td>
+              </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td class='text-center'>
+               <%= f.submit "保存", class: "btn btn-primary save col-xs-6" %>
+      <% end %>
+              </td>
+              <td class='text-center'>
+                <%=link_to "削除",calendar_path(current_user), method: :delete ,class: "btn btn-primary save col-xs-6" %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
 
-    <% @calendars.each do |calendar| %>
-      <div>
-        <%#= link_to calendar.title %>
-        <%= image_tag calendar.stamp_type %>
-      </div>
-    <% end %>
-  <% end %>
+    <div class='col-md-8'>
+      <%= month_calendar events: @calendars do |date, calendars| %>
+        <%= date.day %>
+
+        <% @calendars.each do |calendar| %>
+          <div>
+            <%#= link_to calendar.title %>
+            <%= image_tag calendar.stamp_type, class: 'stamp2' %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
