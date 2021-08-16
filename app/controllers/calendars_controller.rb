@@ -6,7 +6,8 @@ class CalendarsController < ApplicationController
   end
 
   def create
-    Calendar.create(calendar_params)
+    Calendar.create(calendar_params
+    flash[:notice] = "Good Job! 今日もがんばったね！"
     redirect_to calendar_path(current_user.id)
   end
 

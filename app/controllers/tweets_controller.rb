@@ -19,7 +19,7 @@ class TweetsController < ApplicationController
     # binding.pry
     @tweet.user_id = current_user.id
     @tweet.save!
-      flash[:success] = "投稿しました"
+      flash[:success] = "Good Job!　投稿完了です！"
       redirect_to complete_tweets_path
   end
 
@@ -28,9 +28,19 @@ class TweetsController < ApplicationController
   end
 
   def update
+    @tweet = Tweet.find(params[:id])
+    # binding.pry
+    @tweet.update(tweet_params)
+      flash[:success] = "Good Job! 内容を変更しました"
+      redirect_to tweet_path(@tweet)
+    # else
+    #   render :edit
   end
 
   def destroy
+    @tweet = Tweet.find(params[:id])
+    @tweet.destroy
+    redirect_to user_path(current_user)
   end
 
 

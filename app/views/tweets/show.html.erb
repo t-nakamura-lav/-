@@ -16,8 +16,17 @@
       <table class='table table-borderless'>
         <thead>
           <tr>
-            <th style="width: 50%"><%= link_to @tweet.user.name, user_path(@tweet.user) %></th>
-            <th style="width: 50%"><%= @tweet.created_at.strftime('%Y/%m/%d %H:%M') %></th>
+            <th style="width: 40%"><%= link_to @tweet.user.name, user_path(@tweet.user) %></th>
+            <th style="width: 30%"><%= @tweet.created_at.strftime('%Y/%m/%d %H:%M') %></th>
+
+            <% if @tweet.user == current_user %>
+            <th style="width: 15%">
+              <%= link_to "編集", edit_tweet_path(@tweet), class: "glyphicon glyphicon-pencil btn btn-success" %>
+            </th>
+            <th style="width: 15%">
+              <%= link_to "削除", tweet_path,method: :DELETE, data: {confirm: "この投稿を本当に削除しますか？"}, class: "glyphicon glyphicon-tint btn btn-danger" %>
+            </th>
+            <% end %>
           </tr>
         </thead>
 
@@ -30,13 +39,13 @@
 
         <tbody>
           <tr>
-            <td colspan="2"><%= @tweet.tweet %></td>
+            <td colspan="4"><%= @tweet.tweet %></td>
           </tr>
         </tbody>
 
         <tbody>
           <tr>
-            <td colspan="2">
+            <td colspan="4">
               <% if @tweet.images.attached? %>
                 <% @tweet.images.each do |image| %>
                   <%= image_tag image.variant(resize:'300x300') %>
@@ -76,11 +85,11 @@
           <td>
               <%= comment.created_at.strftime('%Y/%m/%d') %>
           </td>
-          <td style="width: 20%">
+          <td style="width: 50%">
               <%= comment.comment %>
             <% end %>
           </td>
-          <td style="width: 50%">
+          <td style="width: 20%">
              <% if comment.user == current_user %>
             <div class="comment-delete">
               <%= link_to "削除", tweet_comment_path(comment.tweet, comment), method: :delete %>
