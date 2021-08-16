@@ -38,6 +38,7 @@
                   <%= f.radio_button :stamp_type, "stamp2.png" %>
                   <%= image_tag 'stamp2.png', class: 'stamp1' %>
                 </td>
+
               </tr>
           </tbody>
           <tbody>
@@ -58,10 +59,11 @@
       <%= month_calendar events: @calendars do |date, calendars| %>
         <%= date.day %>
 
-        <% @calendars.each do |calendar| %>
+        <% calendars.each do |calendar| %>
           <div>
-            <%#= link_to calendar.title %>
-            <%= image_tag calendar.stamp_type, class: 'stamp2' %>
+            <%#= link_to calendars_path,method: :DELETE, data: {confirm: "このスタンプを削除しますか？"} %>
+              <%= image_tag calendar.stamp_type, class: 'stamp2' %>
+            <%# end %>
           </div>
         <% end %>
       <% end %>

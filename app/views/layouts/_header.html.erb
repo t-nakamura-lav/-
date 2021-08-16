@@ -20,7 +20,7 @@
         <li>
           <%#= @user.inspect %> <%= link_to " きろく", new_tweet_path(current_user.id),class: 'fas fa-edit nav-link text-light' %>
         </li>
-        <li><%= link_to " カレンダー",calendar_path(current_user.id),class: 'fas fa-calendar-alt nav-link text-light' %>
+        <li><%= link_to " カレンダー",calendars_path,class: 'fas fa-calendar-alt nav-link text-light' %>
         </li>
         <li><%= link_to " 検索", search_users_path,class: 'fas fa-search nav-link text-light' %>
         </li>

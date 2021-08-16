@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     # binding.pry
     @user.update(user_params)
-      flash[:success] = "登録情報を変更しました"
+      flash[:notice] = "登録情報を変更しました"
       redirect_to user_path(current_user.id)
     # else
     #   render :edit
