@@ -19,13 +19,19 @@
 @import 'font-awesome';
 
 // ヘッダー
+.logo{
+  width: 80px;
+  height: 80px;
+  border-radius: 5%;
+}
+
 header {
-  background-color: #99DDFF;
+  background-color: #888888;
   width: 100%;
   position: relative;
   z-index: 1500;
   .navbar {
-    padding: 15px;
+    padding: 10px;
     ul {
       display: flex;
       align-items: center;
@@ -62,7 +68,7 @@ footer {
   // display: flex;
   // justify-content: center;
   width: 100%;
-  background-color: #99DDFF;
+  background-color: #888888;
   text-align: center;
   padding: 25px 0;
 

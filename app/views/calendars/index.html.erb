@@ -65,9 +65,7 @@
 
         <% calendars.each do |calendar| %>
           <div>
-            <%#= link_to calendars_path,method: :DELETE, data: {confirm: "このスタンプを削除しますか？"} %>
               <%= image_tag calendar.stamp_type, class: 'stamp2' %>
-            <%# end %>
           </div>
         <% end %>
       <% end %>

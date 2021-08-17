@@ -1,7 +1,12 @@
 <header id="header">
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="/"><div><%= link_to "ゆるわーく", root_path %></div></a>
+      <a class="navbar-brand" href="/">
+        <div>
+          <%= link_to root_path do %>
+            <% image_tag 'logo/10.png',class: "logo" %>
+          <% end %>
+        </div></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
