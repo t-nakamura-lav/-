@@ -29,26 +29,30 @@
             </tr>
           </tbody>
           <tbody>
-              <tr>
-                <td>
-                  <%= f.radio_button :stamp_type, "stamp3.png" %>
-                  <%= image_tag 'stamp3.png', class: 'stamp1' %>
-                </td>
-                <td>
-                  <%= f.radio_button :stamp_type, "stamp2.png" %>
-                  <%= image_tag 'stamp2.png', class: 'stamp1' %>
-                </td>
-
-              </tr>
+            <tr>
+              <td>
+                <%= f.radio_button :stamp_type, "stamp3.png" %>
+                <%= image_tag 'stamp3.png', class: 'stamp1' %>
+              </td>
+              <td>
+                <%= f.radio_button :stamp_type, "stamp2.png" %>
+                <%= image_tag 'stamp2.png', class: 'stamp1' %>
+              </td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>
+                <%= f.radio_button :stamp_type, "white.png" %>
+                <%= image_tag 'white.png', class: 'stamp1' %>
+              </td>
+            </tr>
           </tbody>
           <tbody>
             <tr>
               <td class='text-center'>
                <%= f.submit "保存", class: "btn btn-primary save col-xs-6" %>
       <% end %>
-              </td>
-              <td class='text-center'>
-                <%=link_to "削除",calendar_path(current_user), method: :delete ,class: "btn btn-primary save col-xs-6" %>
               </td>
             </tr>
           </tbody>

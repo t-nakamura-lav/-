@@ -48,8 +48,17 @@
 
         <tbody>
           <tr>
-           <!--いいね非同期通信-->
-            <%#= render 'likes/like-btn', tweets: @tweets %>
+            <td>
+              <%= link_to tweet_path(tweet) do %>
+                <p class="far fa-comment" style="color:#ff6f00 ;">
+                <%= tweet.comments.count %> コメント</p>
+              <% end %>
+            </td>
+
+            <!--いいね非同期通信-->
+            <!--<td id="like-btn">-->
+            <!--  <%#= render 'likes/like-btn', tweet: @tweet %>-->
+            <!--</td>-->
           </tr>
         </tbody>
       </table>

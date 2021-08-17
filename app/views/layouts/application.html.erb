@@ -12,14 +12,14 @@
   <body style="background-color: #f9f7f5;">
     <div class="wrapper">
       <%= render 'layouts/header' %>
-
+      <main>
       <% if flash[:notice] %>
         <p class="alert alert-success">
           <%= flash[:notice] %>
         </p>
       <% end %>
         <p class="alert1"><%= alert %></p>
-      <main>
+
 
 
       <%= yield %>

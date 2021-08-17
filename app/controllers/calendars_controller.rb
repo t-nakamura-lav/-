@@ -25,12 +25,6 @@ class CalendarsController < ApplicationController
     redirect_to calendars_path
   end
 
-  def destroy
-    old_calendar.destroy
-    flash[:notice] = "スタンプを削除しました"
-    redirect_to calendars_path
-  end
-
 
   private
 
