@@ -14,18 +14,10 @@
       <%= render 'layouts/header' %>
 
       <!--フラッシュメッセージ-->
-      <% if flash[:notice] %>
-        <p class="alert alert-success">
-          <%= flash[:notice] %>
-        </p>
-      <% end %>
+      <%= render 'layouts/flash_messages' %>
 
       <!--エラーメッセージ-->
-      <% if flash[:alert] %>
-        <p class="alert alert-danger">
-          <%= flash[:alert] %>
-        </p>
-      <% end %>
+      <%= render 'layouts/error_messages' %>
 
       <%= yield %>
 
