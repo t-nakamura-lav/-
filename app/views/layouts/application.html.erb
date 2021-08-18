@@ -12,17 +12,24 @@
   <body style="background-color: #f9f7f5;">
     <div class="wrapper">
       <%= render 'layouts/header' %>
-      <main>
+
+      <!--フラッシュメッセージ-->
       <% if flash[:notice] %>
         <p class="alert alert-success">
           <%= flash[:notice] %>
         </p>
       <% end %>
-        <p class="alert1"><%= alert %></p>
 
-
+      <!--エラーメッセージ-->
+      <% if flash[:alert] %>
+        <p class="alert alert-danger">
+          <%= flash[:alert] %>
+        </p>
+      <% end %>
 
       <%= yield %>
+
+      <main>
       </main>
 
       <%= render 'layouts/footer' %>

@@ -12,17 +12,18 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     # binding.pry
-    @user.update(user_params)
-      flash[:notice] = "登録情報を変更しました"
+    if @user.update(user_params)
+      flash[:notice] = "登録しました！"
       redirect_to user_path(current_user.id)
-    # else
-    #   render :edit
+    else
+      flash[:alert] = "登録に失敗しました"
+      render :edit
+    end
   end
 
   def search
     # 検索オブジェクト
     @q = User.ransack(params[:q])
-
   end
 
   def result

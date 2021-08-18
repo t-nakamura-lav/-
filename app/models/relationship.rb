@@ -4,4 +4,5 @@ class Relationship < ApplicationRecord
   belongs_to :followed, class_name: "User"
   # class_name: "User"を定義することでUserテーブルのレコードを参照する
 
+
 end

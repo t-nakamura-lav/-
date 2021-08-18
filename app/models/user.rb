@@ -30,7 +30,10 @@ class User < ApplicationRecord
     followings.include?(user)
   end
 
-
+  
+  validates :name, length: {maximum: 20, minimum: 2}
+  validates :introduction, length: {maximum: 100}
+  
   enum age_status: { "---": 0, "高校生": 1, "大学生": 2, "浪人生": 3, "大学院生": 4, "専門学生": 5, "社会人": 6 },_suffix: true
 
   enum job_status: { "---": 0, "営業": 1, "事務・オフィスワーク": 2, "販売": 3, "飲食・フード": 4, "サービス・警備・清掃": 5,
