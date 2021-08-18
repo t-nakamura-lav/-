@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 text-center" style= "margin: 15px 0 15px 0;">
-      <h5 style="background-color: #eeeeee;">tweet投稿詳細</h5>
+      <h4>tweet投稿詳細</h4>
     </div>
   </div>
 
@@ -21,10 +21,10 @@
 
             <% if @tweet.user == current_user %>
             <th style="width: 15%">
-              <%= link_to "編集", edit_tweet_path(@tweet), class: "glyphicon glyphicon-pencil btn btn-success" %>
+              <%= link_to "編集", edit_tweet_path(@tweet), class: "btn btn-outline-success" %>
             </th>
             <th style="width: 15%">
-              <%= link_to "削除", tweet_path,method: :DELETE, data: {confirm: "この投稿を本当に削除しますか？"}, class: "glyphicon glyphicon-tint btn btn-danger" %>
+              <%= link_to "削除", tweet_path,method: :DELETE, data: {confirm: "この投稿を本当に削除しますか？"}, class: "btn btn-outline-danger" %>
             </th>
             <% end %>
           </tr>

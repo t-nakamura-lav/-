@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 text-center" style="margin: 15px 0 15px 0;">
-      <h5 style="background-color: #eeeeee;">ユーザー検索結果</h5>
+      <h4>ユーザー検索結果</h4>
     </div>
   </div>
 
@@ -19,7 +19,7 @@
     <p><%= user.challenge_contents %> <br>
     <p><%= user.introduction %>
     <% if user.id == current_user.id %>
-      <%= link_to "マイページ編集", edit_user_path(user), class: "glyphicon glyphicon-pencil btn btn-success" %>
+      <%= link_to "マイページ編集", edit_user_path(user), class: "btn btn-outline-success" %>
     <% else %>
       <%= render 'relationships/follow_btn', user: user %>
     <% end %></p>

@@ -1,23 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 text-center" style="margin: 15px 0 15px 0;">
-      <h5 style="background-color: #eeeeee;">投稿編集</h5>
+      <h4>投稿編集</h4>
     </div>
   </div>
-    <%# if @user.errors.any? %>
-    <!--<ul class="error_messages">-->
-    <!--  <h3><%#= @user.errors.count %>errors prohibited this user from being saved:</h3>-->
-    <!--    <%# @user.errors.full_messages.each do |message| %>-->
-    <!--    <%#= message %>-->
-    <!--    <%# end %>-->
-    <!--</ul>-->
-    <!--<%# end %>-->
 
-  <div class="row">
     <%= form_with model:@tweet, local: true do |f| %>
        <div class="form-group col-xs-12">
         <%= f.label :"がんばったこと", class: "col-sm-5 control-label" %>
-        <%= f.text_field :challenge, class: "col-sm-11 form-control-static" %>
+        <%= f.text_field :challenge, class: "col-sm-8 form-control-static" %>
       </div>
       <div class="form-group col-xs-12">
         <%= f.label :"がんばった時間", class: "col-sm-5 control-label" %>

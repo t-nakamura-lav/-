@@ -11,30 +11,35 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav mx-auto">
 
         <% if user_signed_in? %>
-        <li>
+        <li class="nav pr-5">
           <%= link_to user_path(current_user.id) do %>
-            <%= attachment_image_tag current_user, :profile_image, :fill, 50, 50, format: 'jpeg',fallback: "no_image.jpg",class: "rounded-circle" %>
+            <%= attachment_image_tag current_user, :profile_image, :fill, 55, 55, format: 'jpeg',fallback: "no_image.jpg",class: "rounded-circle" %>
           <% end %>
         </li>
-        <li>
+        <li class="nav pr-4">
           <%= link_to " ほーむ", tweets_path,class: 'fas fa-home nav-link text-light' %>
         </li>
-        <li>
+        <li class="nav pr-4">
           <%#= @user.inspect %> <%= link_to " きろく", new_tweet_path(current_user.id),class: 'fas fa-edit nav-link text-light' %>
         </li>
-        <li><%= link_to " カレンダー",calendars_path,class: 'fas fa-calendar-alt nav-link text-light' %>
+        <li class="nav pr-4">
+          <%= link_to " Myカレンダー",calendars_path,class: 'fas fa-calendar-alt nav-link text-light' %>
         </li>
-        <li><%= link_to " 検索", search_users_path,class: 'fas fa-search nav-link text-light' %>
+        <li class="nav pr-4">
+          <%= link_to " 検索", search_users_path,class: 'fas fa-search nav-link text-light' %>
         </li>
-        <li><%= link_to " ログアウト", destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt faa-wrench nav-link text-light' %>
+        <li>
+          <%= link_to " ログアウト", destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt faa-wrench nav-link text-light' %>
         </li>
       <% else %>
-        <li><%= link_to " 新規登録", new_user_registration_path,class: 'fas fa-user-plus nav-link text-light' %>
+        <li class="nav pr-4">
+          <%= link_to " 新規登録", new_user_registration_path,class: 'fas fa-user-plus nav-link text-light' %>
         </li>
-        <li><%= link_to " ログイン", new_user_session_path,class: 'fas fa-sign-in-alt nav-link text-light' %>
+        <li>
+          <%= link_to " ログイン", new_user_session_path,class: 'fas fa-sign-in-alt nav-link text-light' %>
         </li>
       <% end %>
       </ul>
