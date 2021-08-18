@@ -30,14 +30,22 @@ class User < ApplicationRecord
     followings.include?(user)
   end
 
-  
-  validates :name, length: {maximum: 20, minimum: 2}
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+      # 例えば name を入力必須としているならば， user.name = "ゲスト" なども必要
+    end
+  end
+
+  validates :name, length: {maximum: 20}
   validates :introduction, length: {maximum: 100}
-  
+
   enum age_status: { "---": 0, "高校生": 1, "大学生": 2, "浪人生": 3, "大学院生": 4, "専門学生": 5, "社会人": 6 },_suffix: true
 
   enum job_status: { "---": 0, "営業": 1, "事務・オフィスワーク": 2, "販売": 3, "飲食・フード": 4, "サービス・警備・清掃": 5,
                      "イベント・レジャー・娯楽": 6, "教育・カルチャー・スポーツ": 7, "理・美容": 8, "医療・介護・福祉": 9,
                      "ドライバー・配達": 10, "製造・工場・倉庫": 11, "IT・エンジニア": 12, "クリエイティブ・編集・出版": 13,
                      "専門職": 14, "土木・建設・農水産": 15, "主婦・主夫": 16, "フリーター": 17},_suffix: true
+
 end
