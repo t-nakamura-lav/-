@@ -1,11 +1,11 @@
 class Users::RegistrationsController < ApplicationController
-  before_action :ensure_normal_user, only: %i[uodate destroy]
+  # before_action :ensure_normal_user, only: %i[uodate destroy]
 
-  def ensure_normal_user
-    if resource.email == 'guest@example.com'
-      redirect_to root_path, alert: 'ゲストユーザーの更新・削除はできません。'
-    end
-  end
+  # def ensure_normal_user
+  #   if resource.email == 'guest@example.com'
+  #     redirect_to root_path, alert: 'ゲストユーザーの更新・削除はできません。'
+  #   end
+  # end
 
 
 end

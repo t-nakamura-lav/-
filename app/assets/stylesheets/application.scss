@@ -18,6 +18,113 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+h2, h3, h4, h5, h6 {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+// 新規登録・ログイン
+.login-signin_box {
+  margin: 4%;
+  padding: 8% 15%;
+  border-radius: 6px;
+  background-color: white;
+  h2 {
+    color: #92bbc4;
+    font-weight: 800;
+    text-align: center;
+  }
+  form {
+    text-align: center;
+    color: #545454;
+    .field {
+      margin: 5%;
+      label[for="user_name"] {
+        width: 100%;
+        text-align: start;
+      }
+      input#user_name {
+        width: 100%;
+      }
+      label[for="user_password"] {
+        width: 100%;
+        text-align: start;
+      }
+      input#user_password {
+        width: 100%;
+      }
+      label[for="user_password_confirmation"] {
+        width: 100%;
+        text-align: start;
+      }
+      input#user_password_confirmation {
+        width: 100%;
+      }
+      label[for="user_email"] {
+        width: 100%;
+        text-align: start;
+      }
+      input#user_email {
+        width: 100%;
+      }
+    }
+    // .actions {
+    //   text-align: center;
+    //   margin: 5%;
+    //   input {
+    //     border: none;
+    //     width: 80%;
+    //     position: relative;
+    //     display: inline-block;
+    //     font-weight: bold;
+    //     padding: 0.5em 1em;
+    //     text-decoration: none;
+    //     border-left: solid 8px #92bbc4;
+    //     border-right: solid 8px #92bbc4;
+    //     color: #FFF;
+    //     background: #b8dce4;
+    //     transition: .4s;
+    //     &:hover {
+    //       background: #92bbc4;
+    //       color: #FFF;
+    //     }
+    //   }
+    // }
+    .actions{
+      text-align: center;
+      margin: 5%;
+
+      .btn-flat {
+        overflow: hidden;
+        padding: 1.5rem 6rem;
+        color: #fff;
+        border-radius: 0;
+        background: #000;
+      }
+
+      .btn-flat:before {
+        position: absolute;
+        top: 0;
+        left: 30px;
+        width: 150%;
+        height: 500%;
+        content: '';
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        -webkit-transform: translateX(-98%) translateY(-70%) rotate(135deg);
+        transform: translateX(-98%) translateY(-70%) rotate(135deg);
+        background: #fff100;
+      }
+
+      .btn-flat:hover:before {
+        -webkit-transform: translateX(-9%) translateY(-25%) rotate(135deg);
+        transform: translateX(-9%) translateY(-25%) rotate(135deg);
+      }
+    }
+  }
+}
+
+
+
 // ヘッダー
 .logo{
   width: 80px;
@@ -40,7 +147,7 @@ header {
           padding-left: 0.2rem !important;
           padding-right: 0.2rem !important;
           .fa-bell {
-             position: relative;
+            position: relative;
             .fa-circle {
               position: absolute;
               right: 34px;
