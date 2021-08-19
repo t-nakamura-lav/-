@@ -3,11 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-// 投稿後の下線
-.table{
-  border-bottom: 1px solid #bbbbbb;
-}
-
+// 見出し
 h4 {
     margin: 5% 0;
     background: #92bbc4;
@@ -15,3 +11,13 @@ h4 {
     width: fit-content;
     padding: 4px 6%;
   }
+
+//new,edit投稿部分
+.tweet_box {
+  margin: 4%;
+  padding: 4% 10%;
+  border-radius: 6px;
+  background-color: white;
+}
+
+

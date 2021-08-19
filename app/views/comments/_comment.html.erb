@@ -1,4 +1,4 @@
- <% tweet.comments.each do |comment| %>
+  <% tweet.comments.each do |comment| %>
   <table class='comments-table'>
     <tr>
       <td style="width: 30%">
@@ -16,7 +16,7 @@
       <td style="width: 20%">
          <% if comment.user == current_user %>
         <div class="comment-delete">
-          <%= link_to "削除", tweet_comment_path(comment.tweet, comment), method: :delete,remote: true,class: "btn btn-danger" %>
+          <%= link_to "削除", tweet_comment_path(comment.tweet, comment), method: :delete,remote: true,class: "btn btn-outline-danger" %>
         </div>
         <% end %>
       </td>
