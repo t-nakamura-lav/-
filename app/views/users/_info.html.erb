@@ -1,0 +1,58 @@
+<div class="row" style= "border-bottom: 1px solid #bbbbbb;">
+
+  <div class="col-md-3 text-right">
+    <%= attachment_image_tag user, :profile_image, :fill, 150, 150, format: 'jpeg',fallback: "no_image.jpg" ,class: "rounded-circle" %>
+  </div>
+
+  <div class="col-md-8 text-left">
+    <table class='table table-borderless'>
+      <thead>
+        <tr>
+          <th class="h4" style="width: 60%"><%= user.name %></th>
+          <th style="width: 40%">
+            <% if user.id == current_user.id %>
+              <%= link_to "マイページ編集", edit_user_path(user), class: "btn btn-outline-success" %>
+            <% else %>
+              <%= render 'relationships/follow_btn', user: user %>
+            <% end %>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>
+            <%= user.age_status %>
+          </td>
+          <td>
+            <%= user.job_status %>
+          </td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td colspan="2">
+            <i class= "far fa-flag" style="color:#66ff00 ;"></i>
+            <%= user.challenge_contents %>
+          </td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td colspan="2">
+            <%= user.introduction %>
+          </td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td colspan="2">
+            <%= render 'relationships/follow_count', user: user %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

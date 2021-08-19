@@ -5,23 +5,8 @@
     </div>
   </div>
 
-  <div class="row" style= "border-bottom: 1px solid #bbbbbb;">
-    <div class="col-md-3 text-right">
-      <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, format: 'jpeg',fallback: "no_image.jpg" ,class: "rounded-circle" %>
-    </div>
-    <div class="col-md-8 text-left">
-    <p><%= @user.name %>
-    <%= @user.age_status %>  <%= @user.job_status %></p><br>
-    <p><%= @user.challenge_contents %> <br>
-    <p><%= @user.introduction %>
-    <% if @user.id == current_user.id %>
-      <%= link_to "マイページ編集", edit_user_path(@user), class: "btn btn-outline-success" %>
-    <% else %>
-      <%= render 'relationships/follow_btn', user: @user %>
-    <% end %></p>
-    <p><%= render 'relationships/follow_count', user: @user %></p>
-    </div>
-  </div>
+  <!--Myページ情報-->
+  <%= render 'info', user: @user %>
 
   <% @tweets.each do |tweet| %>
   <div class="row" style= "border-bottom: 1px solid #bbbbbb;">
@@ -43,7 +28,7 @@
         <tbody>
           <tr>
             <td class="marker">
-              <i class= "far fa-flag" style="color:#66ff00 ;"></i>
+              <i class= "far fa-star" style="color:#92bbc4 ;"></i>
               <%= tweet.challenge %>
              </td>
             <td>
