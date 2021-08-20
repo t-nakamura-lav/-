@@ -1,20 +1,20 @@
-<div class="container">
+<div class="calendar-container">
   <div class="row">
-    <div class="col-md-4 text-center" style= "margin: 15px 0 15px 0;">
-      <h5 style="background-color: #eeeeee;">Myカレンダー</h5>
+    <div class="col " style= "margin: 15px 15px 15px 30px;">
+      <h4>Myカレンダー</h4>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-3">
+    <div class="sidebar col-3"><br>
       <%= form_with(model: @calendar, local: true) do |f| %>
         <div class="form-group text-center">
-          <%= f.label :"がんばった日", class: "col-sm-12 control-label" %>
-          <%= f.date_select :start_time%>
-        </div>
+          <%= f.label :"がんばった日", class: "h5 col-sm-12 control-label" %>
+          <%= f.date_select :start_time %>
+        </div><br>
 
         <!--モデルに書いたenumを呼び出す-->
-      <%= f.label :"今日のごほうびスタンプ", class: "col-sm-12 control-label text-center" %>
+      <%= f.label :"今日のごほうびスタンプ", class: "h5 col-sm-12 control-label" %>
         <table class='table table-borderless'>
           <tbody>
             <tr>
@@ -59,7 +59,7 @@
         </table>
     </div>
 
-    <div class='col-md-8'>
+    <div class='col-9'>
       <%= month_calendar events: @calendars do |date, calendars| %>
         <%= date.day %>
 
