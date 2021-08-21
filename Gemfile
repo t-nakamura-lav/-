@@ -82,3 +82,4 @@ gem "aws-sdk-s3", require: false
 gem 'enum_help'
 gem 'simple_calendar', '~> 2.0'
 gem 'rails-i18n', '~> 5.1'
+gem 'select2-rails'

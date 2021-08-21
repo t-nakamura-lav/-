@@ -6,12 +6,45 @@
   </div>
 
   <%= search_form_for @q, url: result_users_path do |f| %>
-  <div class="form-group col-xs-12">
+  <div class="form-group">
     <%= f.label :"ニックネーム", class: "col-sm-5 control-label" %>
     <%= f.search_field :name_cont, class: "name col-md-5 form-control-static name" %>
   </div>
 
-  <div class="form-group col-xs-12">
+  <!--モデルに書いたenumを呼び出す-->
+  <div class="form-group">
+    <%= f.label :"年代", class: "col-sm-5 control-label" %>
+    <%#= f.select :age_status_eq,User.age_statuses.keys, {} %>
+    <%= f.radio_button :age_status_eq, 0, {:checked => true} %>
+    <%= "選択なし" %>&emsp;
+    <%= f.radio_button :age_status_eq, 1 %>
+    <%= "高校生" %>&emsp;
+    <%= f.radio_button :age_status_eq, 2 %>
+    <%= "大学生" %>&emsp;
+    <%= f.radio_button :age_status_eq, 3 %>
+    <%= "浪人生" %>&emsp;
+    <%= f.radio_button :age_status_eq, 4 %>
+    <%= "大学院生" %>&emsp;
+    <%= f.radio_button :age_status_eq, 5 %>
+    <%= "専門学生" %>&emsp;
+    <%= f.radio_button :age_status_eq, 6 %>
+    <%= "社会人" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :"職種", class: "col-sm-5 control-label" %>
+    <%= f.select :job_status_eq,User.job_statuses.keys, {} %>
+    <%#= f.collection_select :job_status_eq, @users, :id, :job_status %>
+    <%#= f.input :job_status, include_blank: '選択して下さい', input_html: {class: 'mySelect2'} %>
+    <%#= f.input :job_status, include_blank: false, input_html: {multiple: true, class: 'mySelect2'} %>
+    <%#= f.select_tag :job_status, job_status_options, class: js-searchable %>
+    <%#= select :article, :tags, tags, { selected: selected_tags }, { multiple: true, name: 'article[tags]', class: 'form-control js-searchable' } %>
+    
+
+
+  </div>
+
+  <div class="form-group">
     <%= f.label :"がんばっていること、自己紹介文", class: "col-sm-5 control-label" %>
     <%= f.search_field :introduction_or_challenge_contents_cont, class: "name col-md-5 form-control-static name" %>
   </div>
