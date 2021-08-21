@@ -19,7 +19,6 @@
 //= require activestorage
 //= require turbolinks
 
-//= require select2
 //= require jquery
 //= require_tree .
 
@@ -30,11 +29,3 @@ $(function() {
   var height = $("#header").height();
   $("main").css("padding-top", height);
 });
-
-
-
-// js-selectable クラスをつけたらSELCT2タグになるようにする
-// $('.js-searchable').select2({
-//   width: 200,
-//   allowClear: true
-// });

@@ -2,6 +2,6 @@ class Calendar < ApplicationRecord
 
   belongs_to :user
 
-  enum stamp_type: { "stamp1.png": 0, "stamp4.png": 1, "stamp3.png": 2, "stamp2.png": 3, "white.png": 4 },_suffix: true
+  enum stamp_type: { "stamp1.jpg": 0, "stamp4.jpg": 1, "stamp3.jpg": 2, "stamp2.jpg": 3, "white.jpg": 4 },_suffix: true
 
 end
