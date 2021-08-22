@@ -4,7 +4,20 @@
  ゆる～くがんばるあなたを応援する、<br>
  自己肯定感爆上げツールです！
 </p>
+<div class= container>
+ <div class="gest-signin">
+   <%= link_to users_guest_sign_in_path, method: :post do %>
+     GUEST ログイン<br>
+     <span>(ポートフォリオ閲覧用)</span>
+   <% end %>
+ </div>
+ <div class="contact-about-pf">
+   <%= link_to new_contact_path do %>
+     PFに関する<br>
+     ご意見・アドバイスはこちら
+   <% end %>
+ </div>
+</div>
 
-<%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
 
-<%= link_to 'お問い合わせはこちら', new_contact_path %>
+

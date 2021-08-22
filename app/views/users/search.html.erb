@@ -1,48 +1,78 @@
-<div class="container" style="background-color: white;">
+<div class="container">
   <div class="row">
-    <div class="col-md-4 text-center" style="margin: 15px 0 15px 0;">
-      <h4>ユーザー検索画面</h4>
+    <div class="col d-flex justify-content-center">
+      <div class="search_box">
+        <h4>ユーザー検索画面</h4><br><br>
+
+      <%= search_form_for @q, url: result_users_path do |f| %>
+        <table class='table table-borderless '>
+          <tbody>
+            <tr>
+              <th style="width: 40%">
+                <%= f.label :"ニックネーム" %>
+              </th>
+              <td style="width: 60%">
+                <%= f.search_field :name_cont %>
+              </td>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <tr>
+              <th>
+                <%= f.label :"年代" %>
+              </th>
+              <td>
+                <!--モデルに書いたenumを呼び出す-->
+                <%= f.radio_button :age_status_eq, 0 %>
+                <%= "選択なし" %>&emsp;
+                <%= f.radio_button :age_status_eq, 1 %>
+                <%= "高校生" %>&emsp;
+                <%= f.radio_button :age_status_eq, 2 %>
+                <%= "大学生" %>&emsp;
+                <%= f.radio_button :age_status_eq, 3 %>
+                <%= "浪人生" %>&emsp;
+                <%= f.radio_button :age_status_eq, 4 %>
+                <%= "大学院生" %>&emsp;
+                <%= f.radio_button :age_status_eq, 5 %>
+                <%= "専門学生" %>&emsp;
+                <%= f.radio_button :age_status_eq, 6 %>
+                <%= "社会人" %>
+              </td>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <tr>
+              <th>
+                <%= f.label :"職種" %>
+              </th>
+              <td>
+                <%= f.select :job_status_eq, User.job_statuses, {} %>
+              </td>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <tr>
+              <th>
+                <%= f.label :"がんばっていること、自己紹介文" %>
+              </th>
+              <td>
+                <%= f.search_field :introduction_or_challenge_contents_cont %>
+              </td>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <tr>
+              <td colspan=2 class="actions text-right">
+              <%= f.submit "検索結果へＧＯ！", class: "btn btn-outline-info col-xs-6" %>
+            </tr>
+          </tbody>
+        </table>
+        <% end %>
+      </div>
     </div>
   </div>
-
-  <%= search_form_for @q, url: result_users_path do |f| %>
-  <div class="form-group">
-    <%= f.label :"ニックネーム", class: "col-sm-5 control-label" %>
-    <%= f.search_field :name_cont, class: "name col-md-5 form-control-static name" %>
-  </div>
-
-  <!--モデルに書いたenumを呼び出す-->
-  <div class="form-group">
-    <%= f.label :"年代", class: "col-sm-5 control-label" %>
-    <%#= f.select :age_status_eq,User.age_statuses.keys, {} %>
-    <%= f.radio_button :age_status_eq, 0 %>
-    <%= "選択なし" %>&emsp;
-    <%= f.radio_button :age_status_eq, 1 %>
-    <%= "高校生" %>&emsp;
-    <%= f.radio_button :age_status_eq, 2 %>
-    <%= "大学生" %>&emsp;
-    <%= f.radio_button :age_status_eq, 3 %>
-    <%= "浪人生" %>&emsp;
-    <%= f.radio_button :age_status_eq, 4 %>
-    <%= "大学院生" %>&emsp;
-    <%= f.radio_button :age_status_eq, 5 %>
-    <%= "専門学生" %>&emsp;
-    <%= f.radio_button :age_status_eq, 6 %>
-    <%= "社会人" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :"職種", class: "col-sm-5 control-label" %>
-    <%= f.select :job_status_eq, User.job_statuses, {} %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :"がんばっていること、自己紹介文", class: "col-sm-5 control-label" %>
-    <%= f.search_field :introduction_or_challenge_contents_cont, class: "name col-md-5 form-control-static name" %>
-  </div>
-
-  <div class="actions text-right">
-    <%= f.submit "検索結果へＧＯ！", class: "btn btn-outline-info col-xs-6" %>
-  </div>
-  <% end %>
 </div>
