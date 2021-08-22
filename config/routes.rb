@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get 'homes/about'
 
-  resources :contacts, only: [:new, :create]
+  resources :contacts, only: [:new, :create] do
+    collection do
+      get 'done'
+    end
+  end
 
   resources :users, only: [:show, :edit, :update] do
     collection do
