@@ -1,7 +1,8 @@
-  <% tweet.comments.each do |comment| %>
-  <table class='comments-table'>
+<% tweet.comments.each do |comment| %>
+<table class='comments-table' style= "border-bottom: 1px solid #bbbbbb;">
+  <tbody>
     <tr>
-      <td style="width: 30%">
+      <td style="width: 30% text-center">
         <%= link_to user_path(comment.user) do %>
           <%= attachment_image_tag(comment.user, :profile_image, :fill, 50, 50, format: 'jpeg',fallback: "no_image.jpg" ,class: "rounded-circle") %>
           <%= comment.user.name %>
@@ -21,12 +22,13 @@
         <% end %>
       </td>
     </tr>
+  </tbody><br>
   </table>
+<% end %>
+<br>
+<div class="new-comment">
+  <%= form_with(model:[tweet, comment], remote: true) do |f| %>
+    <%= f.text_area :comment, rows:'5', cols:'80',placeholder: "コメントをここに" %>
+    <%= f.submit "送信する",class: "btn btn-outline-info" %>
   <% end %>
-
-  <div class="new-comment">
-    <%= form_with(model:[tweet, comment], remote: true) do |f| %>
-      <%= f.text_area :comment, rows:'5', cols:'80',placeholder: "コメントをここに" %>
-      <%= f.submit "送信する",class: "btn btn-outline-info" %>
-    <% end %>
-  </div>
+</div>
