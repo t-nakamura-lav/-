@@ -6,7 +6,6 @@
   </div>
 
 <!--users/show上部　Myページ情報引用-->
-<% if @results.exists? %>
   <% @results.each do |user| %>
    <div class="row"  style= "border-bottom: 1px solid #bbbbbb;">
       <table class='table table-borderless'>
@@ -28,13 +27,11 @@
               <% else %>
                 <%= render 'relationships/follow_btn', user: user %>
               <% end %>
+              <%= render 'relationships/follow_count', user: user %></p>
             </td>
           </tr>
         </thead>
       </table>
     </div>
   <% end %>
-<% else %>
-  <p>ユーザーはいません</p>
-<% end %>
 </div>

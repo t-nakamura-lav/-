@@ -24,20 +24,13 @@
               </th>
               <td>
                 <!--モデルに書いたenumを呼び出す-->
-                <%= f.radio_button :age_status_eq, 0 %>
-                <%= "選択なし" %>&emsp;
-                <%= f.radio_button :age_status_eq, 1 %>
-                <%= "高校生" %>&emsp;
-                <%= f.radio_button :age_status_eq, 2 %>
-                <%= "大学生" %>&emsp;
-                <%= f.radio_button :age_status_eq, 3 %>
-                <%= "浪人生" %>&emsp;
-                <%= f.radio_button :age_status_eq, 4 %>
-                <%= "大学院生" %>&emsp;
-                <%= f.radio_button :age_status_eq, 5 %>
-                <%= "専門学生" %>&emsp;
-                <%= f.radio_button :age_status_eq, 6 %>
-                <%= "社会人" %>
+                <%= f.radio_button :age_status_eq, '', {:checked => true} %>指定なし&emsp;
+                <%= f.radio_button :age_status_eq, 0 %> 高校生&emsp;
+                <%= f.radio_button :age_status_eq, 1 %> 大学生&emsp;
+                <%= f.radio_button :age_status_eq, 2 %> 浪人生&emsp;
+                <%= f.radio_button :age_status_eq, 3 %> 大学院生&emsp;
+                <%= f.radio_button :age_status_eq, 4 %> 専門学生&emsp;
+                <%= f.radio_button :age_status_eq, 5 %> 社会人&emsp;
               </td>
             </tr>
           </tbody>
@@ -68,6 +61,7 @@
             <tr>
               <td colspan=2 class="actions text-right">
               <%= f.submit "検索結果へＧＯ！", class: "btn btn-outline-info col-xs-6" %>
+              </td>
             </tr>
           </tbody>
         </table>

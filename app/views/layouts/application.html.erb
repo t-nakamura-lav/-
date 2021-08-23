@@ -4,10 +4,9 @@
     <title>StartChallenge</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
   </head>
 
   <body style="background-color: #f9f7f5;">
@@ -21,9 +20,6 @@
       <%= render 'layouts/error_messages' %>
 
       <%= yield %>
-
-      <main>
-      </main>
 
       <%= render 'layouts/footer' %>
     </div>
