@@ -23,6 +23,8 @@
 //= require_tree .
 
 
+$(document).on('turbolinks:load', function() {
+  // 以降はturbolinksを無効化したい処理について
 //ヘッダーの高さ分だけコンテンツを下げる
 /*global $*/
 $(function() {
@@ -55,4 +57,7 @@ $(document).ready(function () {
     // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
     hidePrevious : false
   });
+});
+
+
 });
