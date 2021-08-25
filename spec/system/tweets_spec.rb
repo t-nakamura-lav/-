@@ -1,24 +1,32 @@
 require 'rails_helper'
 
 describe '投稿のテスト' do
-  let!(:tweet) { create(:tweet, challenge:'hoge',tweet:'body') }
+  let!(:user) {create(:user)}
+  let!(:tweet) { create(:tweet, challenge:'hoge',tweet:'body',user: user) }
+  before do
+    visit new_user_session_path
+    fill_in 'user[name]', with: user.name
+    fill_in 'user[password]', with: user.password
+    click_button 'ログイン'
+  end
+
   describe 'トップ画面(root_path)のテスト' do
     before do
-      visit top_path
+      visit root_path
     end
     context '表示の確認' do
       it 'トップ画面(root_path)に「ここはTopページです」が表示されているか' do
-        expect(page).to have_content 'ここはTopページです'
+        expect(page).to have_content 'ログイン'
       end
       it 'root_pathが"/top"であるか' do
-        expect(current_path).to eq('/top')
+        expect(current_path).to eq('/')
       end
     end
   end
 
   describe "きろく画面(new_tweet_path)のテスト" do
     before do
-      visit tweets_path
+      visit new_tweet_path
     end
     context '表示の確認' do
       it 'new_tweet_pathが"/tweets/new"であるか' do
@@ -33,19 +41,19 @@ describe '投稿のテスト' do
         fill_in 'tweet[challenge]', with: Faker::Lorem.characters(number:5)
         fill_in 'tweet[tweet]', with: Faker::Lorem.characters(number:20)
         click_button '保存'
-        expect(page).to have_current_path complete_tweets_path(Tweet.last)
+        expect(page).to have_current_path complete_tweets_path
       end
     end
   end
 
   describe "みんなのがんばり一覧のテスト" do
     before do
-      visit todolists_path
+      visit tweets_path
     end
     context '表示の確認' do
       it '投稿されたものが表示されているか' do
         expect(page).to have_content tweet.challenge
-        expect(page).to have_link tweet.tweet
+        expect(page).to have_content tweet.tweet
       end
     end
   end
@@ -66,7 +74,8 @@ describe '投稿のテスト' do
       it '編集の遷移先は編集画面か' do
         edit_link = find_all('a')[3]
         edit_link.click
-        expect(current_path).to eq('/tweets/' + tweet.id.to_s + '/edit')
+        # expect(current_path).to eq('/tweets/' + tweet.id.to_s + '/edit')
+        expect(page).to have_current_path edit_tweet_path(tweet)
       end
     end
     context 'tweet削除のテスト' do
@@ -94,7 +103,7 @@ describe '投稿のテスト' do
         fill_in 'tweet[challenge]', with: Faker::Lorem.characters(number:5)
         fill_in 'tweet[tweet]', with: Faker::Lorem.characters(number:20)
         click_button '保存'
-        expect(page).to have_current_path complete_tweets_path(tweet)
+        expect(page).to have_current_path tweet_path(tweet)
       end
     end
   end

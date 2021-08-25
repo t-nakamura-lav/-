@@ -25,6 +25,7 @@
 
 $(document).on('turbolinks:load', function() {
   // 以降はturbolinksを無効化したい処理について
+  
 //ヘッダーの高さ分だけコンテンツを下げる
 /*global $*/
 $(function() {
@@ -58,6 +59,7 @@ $(document).ready(function () {
     hidePrevious : false
   });
 });
+
 
 
 });

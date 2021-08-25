@@ -13,10 +13,10 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       # 新規登録ページへ移動する
       visit new_user_registration_path
       # ユーザー情報を入力する
-      fill_in 'name', with: @user.nickname
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
-      fill_in 'Password confirmation', with: @user.password_confirmation
+      fill_in 'ニックネーム', with: @user.name
+      fill_in 'メールアドレス', with: @user.email
+      fill_in 'パスワード', with: @user.password
+      fill_in 'パスワード（確認用）', with: @user.password_confirmation
       # 登録ボタンを押すとユーザーモデルのカウントが1増えることを確認する
       expect{
         find('input[name="button"]').click
@@ -41,10 +41,10 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       # 新規登録ページへ移動する
       visit new_user_registration_path
       # ユーザー情報を入力する
-      fill_in 'name', with: ''
-      fill_in 'Email', with: ''
-      fill_in 'Password', with: ''
-      fill_in 'Password confirmation', with: ''
+      fill_in 'ニックネーム', with: ''
+      fill_in 'メールアドレス', with: ''
+      fill_in 'パスワード', with: ''
+      fill_in 'パスワード（確認用）', with: ''
       # 登録ボタンを押してもユーザーモデルのカウントが増えないことを確認する
       expect{
         find('input[name="button"]').click
@@ -68,8 +68,8 @@ RSpec.describe 'ログイン', type: :system do
       # ログインページへ遷移する
       visit new_user_session_path
       # 正しいユーザー情報を入力する
-      fill_in 'Name', with: @user.name
-      fill_in 'Password', with: @user.password
+      fill_in 'ニックネーム', with: @user.name
+      fill_in 'パスワード', with: @user.password
       # ログインボタンを押す
       find('input[name="button"]').click
       # トップページへ遷移することを確認する
@@ -92,8 +92,8 @@ RSpec.describe 'ログイン', type: :system do
       # ログインページへ遷移する
       visit new_user_session_path
       # ユーザー情報を入力する
-      fill_in 'Name', with: ''
-      fill_in 'Password', with: ''
+      fill_in 'ニックネーム', with: ''
+      fill_in 'パスワード', with: ''
       # ログインボタンを押す
       find('input[name="button"]').click
       # ログインページへ戻されることを確認する

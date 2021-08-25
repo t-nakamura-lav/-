@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :tweet do
-    title { Faker::Lorem.characters(number:10) }
-    body { Faker::Lorem.characters(number:30) }
+    challenge { Faker::Lorem.characters(number:10) }
+    tweet { Faker::Lorem.characters(number:30) }
+    association :user
   end
 end
