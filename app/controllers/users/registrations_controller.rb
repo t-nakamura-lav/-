@@ -6,6 +6,4 @@ class Users::RegistrationsController < ApplicationController
   #     redirect_to root_path, alert: 'ゲストユーザーの更新・削除はできません。'
   #   end
   # end
-
-
 end

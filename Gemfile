@@ -79,7 +79,7 @@ gem 'font-awesome-sass', '~> 5.13'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem "ransack"
-gem 'kaminari','~> 1.2.1'
+gem 'kaminari', '~> 1.2.1'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem "aws-sdk-s3", require: false

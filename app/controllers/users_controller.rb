@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def show
     @user = User.find(params[:id])
     @tweets = @user.tweets.order("id ASC").page(params[:page]).reverse_order
@@ -36,6 +35,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-  	params.require(:user).permit(:name, :profile_image, :introduction, :age_status, :job_status, :challenge_contents)
+    params.require(:user).permit(:name, :profile_image,
+                                 :introduction, :age_status, :job_status, :challenge_contents)
   end
 end

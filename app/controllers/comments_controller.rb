@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def create
     @tweet = Tweet.find(params[:tweet_id])
     @comment = Comment.new
@@ -18,10 +17,9 @@ class CommentsController < ApplicationController
     # redirect_to tweet_path(params[:tweet_id]) 非同期通信化
   end
 
-
   private
 
-    def comment_params
-      params.require(:comment).permit(:comment)
-    end
+  def comment_params
+    params.require(:comment).permit(:comment)
+  end
 end

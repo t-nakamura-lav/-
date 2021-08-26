@@ -15,5 +15,4 @@ class TweetsControllerTest < ActionDispatch::IntegrationTest
     get tweets_edit_url
     assert_response :success
   end
-
 end

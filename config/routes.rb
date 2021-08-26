@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-
   devise_for :users
   # ゲストユーザーを削除できないようにする
-    # , controllers: {
+  # , controllers: {
   #   registrations: 'users/registrations'
   # }
   # ゲストログイン機能
@@ -25,9 +24,8 @@ Rails.application.routes.draw do
       get 'result'
     end
     resource :relationships, only: [:create, :destroy]
-      get 'followings' => 'relationships#followings', as: 'followings'
-      get 'followers' => 'relationships#followers', as: 'followers'
-
+    get 'followings' => 'relationships#followings', as: 'followings'
+    get 'followers' => 'relationships#followers', as: 'followers'
   end
 
   # member= resourcesでは自動生成されないものに使う。生成するroutingに:idがつく。
@@ -43,5 +41,4 @@ Rails.application.routes.draw do
   # post=URLが保存不可、get=URL保存可
 
   resources :calendars, only: [:create, :index]
-
 end

@@ -4,6 +4,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
   before do
     @user = FactoryBot.build(:user)
   end
+
   context 'ユーザー新規登録ができるとき' do
     it '正しく情報を入力すればユーザー新規登録ができてトップページに移動する' do
       # トップページに移動する
@@ -18,9 +19,9 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       fill_in 'パスワード', with: @user.password
       fill_in 'パスワード（確認用）', with: @user.password_confirmation
       # 登録ボタンを押すとユーザーモデルのカウントが1増えることを確認する
-      expect{
+      expect  do
         find('input[name="button"]').click
-      }.to change { User.count }.by(1)
+      end.to change(User, :count).by(1)
       # トップページへ遷移することを確認する
       expect(current_path).to eq(root_path)
       # カーソルを合わせるとログアウトボタンが表示されることを確認する
@@ -32,6 +33,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       expect(page).to have_no_content('ログイン')
     end
   end
+
   context 'ユーザー新規登録ができないとき' do
     it '誤った情報ではユーザー新規登録ができずに新規登録ページへ戻ってくる' do
       # トップページに移動する
@@ -46,9 +48,9 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       fill_in 'パスワード', with: ''
       fill_in 'パスワード（確認用）', with: ''
       # 登録ボタンを押してもユーザーモデルのカウントが増えないことを確認する
-      expect{
+      expect  do
         find('input[name="button"]').click
-      }.to change { User.count }.by(0)
+      end.to change(User, :count).by(0)
       # 新規登録ページへ戻されることを確認する
       expect(current_path).to eq('/users')
     end
@@ -59,6 +61,7 @@ RSpec.describe 'ログイン', type: :system do
   before do
     @user = FactoryBot.create(:user)
   end
+
   context 'ログインができるとき' do
     it '保存されているユーザーの情報と合致すればログインができる' do
       # トップページに移動する
@@ -83,6 +86,7 @@ RSpec.describe 'ログイン', type: :system do
       expect(page).to have_no_content('ログイン')
     end
   end
+
   context 'ログインができないとき' do
     it '保存されているユーザーの情報と合致しないとログインができない' do
       # トップページに移動する

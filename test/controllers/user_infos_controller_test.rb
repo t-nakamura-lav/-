@@ -10,5 +10,4 @@ class UserInfosControllerTest < ActionDispatch::IntegrationTest
     get user_infos_edit_url
     assert_response :success
   end
-
 end

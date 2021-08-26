@@ -1,5 +1,4 @@
 class TweetImagesController < ApplicationController
-
   def new
   end
 
@@ -14,5 +13,4 @@ class TweetImagesController < ApplicationController
 
   def destroy
   end
-
 end

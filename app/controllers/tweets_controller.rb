@@ -37,8 +37,8 @@ class TweetsController < ApplicationController
       flash[:notice] = "Good Job! 内容を変更しました"
       redirect_to tweet_path(@tweet)
     else
-     flash[:alert] = "投稿の更新に失敗しました"
-     render :edit
+      flash[:alert] = "投稿の更新に失敗しました"
+      render :edit
     end
   end
 
@@ -48,15 +48,13 @@ class TweetsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-
   def complete
   end
-
 
   private
 
   def tweet_params
-  	params.require(:tweet).permit(:time, :tweet, :challenge, :hour_attribute, :minute_attribute, images: [])
+    params.require(:tweet).permit(:time, :tweet, :challenge,
+                                  :hour_attribute, :minute_attribute, images: [])
   end
-
 end

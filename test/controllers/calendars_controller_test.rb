@@ -5,5 +5,4 @@ class CalendarsControllerTest < ActionDispatch::IntegrationTest
     get calendars_show_url
     assert_response :success
   end
-
 end
