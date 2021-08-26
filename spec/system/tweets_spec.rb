@@ -79,10 +79,9 @@ describe '投稿のテスト' do
 
     context 'リンクの遷移先の確認' do
       it '編集の遷移先は編集画面か' do
-        edit_link = find_all('a')[3]
+        edit_link = find_all('a')[10]
         edit_link.click
-        # expect(current_path).to eq('/tweets/' + tweet.id.to_s + '/edit')
-        expect(page).to have_current_path edit_tweet_path(tweet)
+        expect(current_path).to eq('/tweets/' + tweet.id.to_s + '/edit')
       end
     end
 

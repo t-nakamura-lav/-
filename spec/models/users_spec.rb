@@ -1,10 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe 'ユーザー新規登録', type: :system do
+describe 'ユーザー新規登録/ログインテスト' do
   before do
     @user = FactoryBot.build(:user)
   end
 
+describe 'ユーザー新規登録' do
   context 'ユーザー新規登録ができるとき' do
     it '正しく情報を入力すればユーザー新規登録ができてトップページに移動する' do
       # トップページに移動する
@@ -14,23 +15,21 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       # 新規登録ページへ移動する
       visit new_user_registration_path
       # ユーザー情報を入力する
-      fill_in 'ニックネーム', with: @user.name
-      fill_in 'メールアドレス', with: @user.email
-      fill_in 'パスワード', with: @user.password
-      fill_in 'パスワード（確認用）', with: @user.password_confirmation
+      fill_in 'user[name]', with: @user.name
+      fill_in 'user[email]', with: @user.email
+      fill_in 'user[password]', with: @user.password
+      fill_in 'user[password_confirmation]', with: @user.password_confirmation
       # 登録ボタンを押すとユーザーモデルのカウントが1増えることを確認する
       expect  do
-        find('input[name="button"]').click
+        find('input[name="commit"]').click
       end.to change(User, :count).by(1)
       # トップページへ遷移することを確認する
       expect(current_path).to eq(root_path)
-      # カーソルを合わせるとログアウトボタンが表示されることを確認する
-      expect(
-        find('.user_nav').find('span').hover
-      ).to have_content('ログアウト')
+      expect(page).to have_content('ログアウト')
       # 新規登録ページへ遷移するボタンやログインページへ遷移するボタンが表示されていないことを確認する
-      expect(page).to have_no_content('新規登録')
-      expect(page).to have_no_content('ログイン')
+      click_link 'ログアウト'
+      expect(page).to have_content('新規登録')
+      expect(page).to have_content('ログイン')
     end
   end
 
@@ -43,13 +42,13 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       # 新規登録ページへ移動する
       visit new_user_registration_path
       # ユーザー情報を入力する
-      fill_in 'ニックネーム', with: ''
-      fill_in 'メールアドレス', with: ''
-      fill_in 'パスワード', with: ''
-      fill_in 'パスワード（確認用）', with: ''
+      fill_in 'user[name]', with: ''
+      fill_in 'user[email]', with: ''
+      fill_in 'user[password]', with: ''
+      fill_in 'user[password_confirmation]', with: ''
       # 登録ボタンを押してもユーザーモデルのカウントが増えないことを確認する
       expect  do
-        find('input[name="button"]').click
+        find('input[name="commit"]').click
       end.to change(User, :count).by(0)
       # 新規登録ページへ戻されることを確認する
       expect(current_path).to eq('/users')
@@ -57,7 +56,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
   end
 end
 
-RSpec.describe 'ログイン', type: :system do
+describe 'ログイン' do
   before do
     @user = FactoryBot.create(:user)
   end
@@ -71,19 +70,18 @@ RSpec.describe 'ログイン', type: :system do
       # ログインページへ遷移する
       visit new_user_session_path
       # 正しいユーザー情報を入力する
-      fill_in 'ニックネーム', with: @user.name
-      fill_in 'パスワード', with: @user.password
+      fill_in 'user[name]', with: @user.name
+      fill_in 'user[password]', with: @user.password
       # ログインボタンを押す
-      find('input[name="button"]').click
+      find('input[name="commit"]').click
       # トップページへ遷移することを確認する
       expect(current_path).to eq(root_path)
       # カーソルを合わせるとログアウトボタンが表示されることを確認する
-      expect(
-        find('.nav_bar').find('span').hover
-      ).to have_content('ログアウト')
+      expect(page).to have_content('ログアウト')
       # サインアップページへ遷移するボタンやログインページへ遷移するボタンが表示されていないことを確認する
-      expect(page).to have_no_content('新規登録')
-      expect(page).to have_no_content('ログイン')
+      click_link 'ログアウト'
+      expect(page).to have_content('新規登録')
+      expect(page).to have_content('ログイン')
     end
   end
 
@@ -96,12 +94,13 @@ RSpec.describe 'ログイン', type: :system do
       # ログインページへ遷移する
       visit new_user_session_path
       # ユーザー情報を入力する
-      fill_in 'ニックネーム', with: ''
-      fill_in 'パスワード', with: ''
+      fill_in 'user[name]', with: ''
+      fill_in 'user[password]', with: ''
       # ログインボタンを押す
-      find('input[name="button"]').click
+      find('input[name="commit"]').click
       # ログインページへ戻されることを確認する
       expect(current_path).to eq(new_user_session_path)
     end
   end
+end
 end

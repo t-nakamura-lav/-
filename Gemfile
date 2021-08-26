@@ -41,6 +41,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem "pry-byebug"
   gem 'rubocop-airbnb'
+  gem 'faker'
 end
 
 group :development do
@@ -65,7 +66,6 @@ group :test do
   gem 'webdrivers', '~> 3.0'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

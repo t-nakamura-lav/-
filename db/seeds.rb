@@ -83,9 +83,9 @@ User.create!(
 
 User.all.each do |user|
   user.tweets.create!(
-    challenge: 'プログラミング',
-    tweet: 'がんばってます！',
-    hour_attribute: '3',
-    minute_attribute: '30'
+    challenge: Faker::ProgrammingLanguage.name,
+    tweet: Faker::Coffee.blend_name,
+    hour_attribute: '10',
+    minute_attribute: '00'
   )
 end
