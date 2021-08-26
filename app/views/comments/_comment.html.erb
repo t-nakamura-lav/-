@@ -1,10 +1,10 @@
 <% tweet.comments.each do |comment| %>
-<table class='comments-table' style= "border-bottom: 1px solid #bbbbbb;">
+<table class='comments-table' style= "border-bottom: 1px solid #bbbbbb; width:100%;">
   <tbody>
     <tr>
       <td style="width: 30% text-center">
         <%= link_to user_path(comment.user) do %>
-          <%= attachment_image_tag(comment.user, :profile_image, :fill, 50, 50, format: 'jpeg',fallback: "no_image.jpg" ,class: "rounded-circle") %>
+          <%= attachment_image_tag(comment.user, :profile_image,format: 'jpeg',fallback: "human.jpg" ,class: "icon") %>
           <%= comment.user.name %>
       </td>
       <td>
