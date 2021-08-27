@@ -1,14 +1,10 @@
-<tbody>
-  <tr>
-    <td>
-      <%= link_to user_followings_path(user.id) do %>
-        <%= user.followings.count %> フォロー中
-      <% end %>
-    </td>
-    <td>
-      <%= link_to user_followers_path(user.id) do %>
-        <%= user.followers.count %> フォロワー
-      <% end %>
-    </td>
-  </tr>
-</tbody>
+<td>
+  <%= link_to user_followings_path(user.id) do %>
+    <%= user.followings.count %> フォロー中
+  <% end %>
+</td>
+<td colspan="2">
+  <%= link_to user_followers_path(user.id) do %>
+    <%= user.followers.count %> フォロワー
+  <% end %>
+</td>

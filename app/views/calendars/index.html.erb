@@ -1,12 +1,9 @@
 <div class="calendar-container">
-  <div class="row">
-    <div class="col " style= "margin: 15px 15px 15px 30px;">
-      <h4>Myカレンダー</h4>
-    </div>
-  </div>
+  <h4 class="calendar-title" style= "margin: 15px 15px 15px 30px;">Myカレンダー</h4>
 
   <div class="row">
-    <div class="sidebar col-3"><br>
+    <div class="col-3">
+    <div class="sidebar"><br>
       <%= form_with(model: @calendar, local: true) do |f| %>
         <div class="form-group text-center">
           <%= f.label :"がんばった日", class: "h5 col-sm-12 control-label" %>
@@ -46,17 +43,12 @@
                 <%= f.radio_button :stamp_type, "white.jpg" %>
                 <%= image_tag 'white.jpg', class: 'stamp1' %>
               </td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td class='text-center'>
-               <%= f.submit "保存", class: "btn btn-primary save col-xs-6" %>
-      <% end %>
+              <td class='text-center'><br>
+               <%= f.submit "保存", class: "btn btn-info save col-xs-6" %>
               </td>
-            </tr>
-          </tbody>
+      <% end %>
         </table>
+    </div>
     </div>
 
     <div class='col-9'>
