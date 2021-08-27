@@ -28,7 +28,7 @@
 <br>
 <div class="new-comment">
   <%= form_with(model:[tweet, comment], remote: true) do |f| %>
-    <%= f.text_area :comment, rows:'5', cols:'80',placeholder: "コメントをここに" %>
+    <%= f.text_area :comment,placeholder: "コメントをここに" ,style: "width:80%; height:100px;" %>
     <%= f.submit "送信する",class: "btn btn-outline-info" %>
   <% end %>
 </div>
