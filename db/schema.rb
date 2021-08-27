@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_18_062049) do
+ActiveRecord::Schema.define(version: 2021_08_27_084540) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -70,16 +70,9 @@ ActiveRecord::Schema.define(version: 2021_08_18_062049) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tweet_images", force: :cascade do |t|
-    t.string "tweet_image_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "tweets", force: :cascade do |t|
     t.time "time"
     t.text "tweet"
-    t.integer "stamp_type", default: 0
     t.text "challenge"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
