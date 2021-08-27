@@ -165,32 +165,36 @@ footer {
 
 /* スマートフォンサイズ（425px）以下の際に適用される設定 */
 @media screen and (max-width: 425px) {
-.skippr{
-  height: 200px;
-}
+  .skippr{
+    height: 200px;
+  }
 
-// ゲストログイン
-.gest-signin {
-  position: sticky;
-  left: 110px;
-  bottom: 120px;
-}
+  // ゲストログイン
+  .gest-signin {
+    position: sticky;
+    left: 110px;
+    bottom: 120px;
+  }
 
-// カレンダー画面
-// カレンダーのサイドバー
-.col-3 {
-    flex: none;
-    max-width: 100%;
-}
+  // カレンダー画面
+  // カレンダーのサイドバー
+  .col-3 {
+      flex: none;
+      max-width: 100%;
+  }
 
-// スタンプ画像の大きさ
-.stamp1{
-  width: 60px;
-  height: 60px;
-}
+  // スタンプ画像の大きさ
+  .stamp1{
+    width: 60px;
+    height: 60px;
+  }
 
-.stamp2{
-  width: 40px;
-  height: 40px;
-}
+  .stamp2{
+    width: 40px;
+    height: 40px;
+  }
+  // complete画面の文字
+  .title{
+    font-size: 25px;
+  }
 }
