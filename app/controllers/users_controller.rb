@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def result
-    if  params[:q][:job_status_eq] == "0"
+    if params[:q][:job_status_eq] == "0"
       params[:q][:job_status_eq] = ""
     end
     # 検索オブジェクト
