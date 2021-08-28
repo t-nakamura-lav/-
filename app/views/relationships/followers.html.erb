@@ -11,15 +11,15 @@
     <table class='table table-borderless'>
       <thead>
         <tr>
-          <th>
+          <th style="width:25%;">
             <%= link_to user_path(user) do %>
               <%= attachment_image_tag user, :profile_image, format: 'jpeg',fallback: "human.jpg" ,class: "icon" %>
             <% end %>
             <%= link_to user.name, user_path(user) %>
           </th>
-          <td><%= user.challenge_contents %></td>
-          <td><%= user.introduction %></td>
-          <td><%= render 'follow_btn', user: @user %></td>
+          <td style="width:20%;"><%= user.challenge_contents %></td>
+          <td style="width:35%;"><%= user.introduction %></td>
+          <td style="width:20%;"><%= render 'follow_btn', user: @user %></td>
         </tr>
       </thead>
     </table>
@@ -28,4 +28,5 @@
 <% else %>
   <p>ユーザーはいません</p>
 <% end %>
+<%= paginate @users %>
 </div>

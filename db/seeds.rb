@@ -74,7 +74,7 @@ User.create!(
   name: 'くりはらさん',
   password: '123456',
   profile_image: File.open('./app/assets/images/users/6.jpg'),
-  introduction: '！',
+  introduction: '継続できるようがんばります。',
   age_status: '社会人',
   job_status: '主婦・主夫',
   challenge_contents: 'パソコン（word、excel）'

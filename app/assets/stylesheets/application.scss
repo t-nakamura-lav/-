@@ -163,6 +163,29 @@ footer {
   margin: 0 auto;
 }
 
+
+/* タブレット横置きサイズ（1024px）以下の際に適用される設定 */
+@media screen and (max-width:1024px) {
+  .skippr{
+    height: 500px;
+  }
+  // complete画面の文字
+  .title{
+    font-size: 70px;
+  }
+}
+
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width:768px) {
+ .skippr{
+    height: 350px;
+  }
+  // complete画面の文字
+  .title{
+    font-size: 50px;
+  }
+}
+
 /* スマートフォンサイズ（425px）以下の際に適用される設定 */
 @media screen and (max-width: 425px) {
   .skippr{
