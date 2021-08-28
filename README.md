@@ -3,6 +3,7 @@
 ## サイトテーマ
 「仕事や勉強をがんばっている人たちがつながる」サイト.
  ゆる～くがんばるあなたを応援する、自己肯定感爆上げツール！
+ (https://user-images.githubusercontent.com/83739452/131210642-80d9a08b-6541-42ca-be97-0f00f764bec3.JPG)
 
 ### サイト概要
 * 仕事や勉強などがんばった内容、いつ何時間取り組んだのか記録できる。
@@ -33,6 +34,11 @@
 
 ### 主な利用シーン
 仕事・勉強の前後、休憩中
+
+### 使い方
+(https://user-images.githubusercontent.com/83739452/131210647-8188e45c-87b3-4ede-9056-246d6b80341d.JPG)
+(https://user-images.githubusercontent.com/83739452/131210651-ca937fc6-7f2f-4f5e-b1b7-21644d58de71.JPG)
+(https://user-images.githubusercontent.com/83739452/131210655-97d3623d-3053-4f7f-9119-56db4071c242.JPG)
 
 ## 設計書
 * ワイヤーフレーム　https://docs.google.com/presentation/d/1lruO-w8hYUFAGCIeXeR4HN249WpR6K9eoeGjhfzkfUQ/edit#slide=id.gafeaef8514_0_0
