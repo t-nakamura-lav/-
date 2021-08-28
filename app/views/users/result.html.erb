@@ -11,16 +11,16 @@
       <table class='table table-borderless'>
         <thead>
           <tr>
-            <th>
+            <th style="width:20%;">
               <%= link_to user_path(user) do %>
                 <%= attachment_image_tag user, :profile_image,format: 'jpeg',fallback: "human.jpg" ,class: "icon" %>
                 <br><%= user.name %>
               <% end %>
             </th>
-            <td><%= user.age_status %></td>
-            <td><%= user.job_status %></td>
-            <td><%= user.challenge_contents %></td>
-            <td><%= user.introduction %></td>
+            <td style="width:15%;"><%= user.age_status %></td>
+            <td style="width:15%;"><%= user.job_status %></td>
+            <td style="width:20%;"><%= user.challenge_contents %></td>
+            <td style="width:30%;"><%= user.introduction %></td>
             </tr>
         </thead>
         <tbody>
@@ -38,4 +38,5 @@
       </table>
     </div>
   <% end %>
+  <%= paginate @results %>
 </div>

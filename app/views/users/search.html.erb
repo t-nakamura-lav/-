@@ -23,7 +23,6 @@
                 <%= f.label :"年代" %>
               </th>
               <td>
-                <!--モデルに書いたenumを呼び出す-->
                 <%= f.radio_button :age_status_eq,'' %>指定なし&emsp;
                 <%= f.radio_button :age_status_eq, 0 %> 高校生&emsp;
                 <%= f.radio_button :age_status_eq, 1 %> 大学生&emsp;
@@ -41,6 +40,7 @@
                 <%= f.label :"職種" %>
               </th>
               <td>
+                <!--モデルに書いたenumを呼び出す-->
                 <%= f.select :job_status_eq, User.job_statuses, {} %>
               </td>
             </tr>

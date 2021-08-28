@@ -26,10 +26,13 @@ class UsersController < ApplicationController
   end
 
   def result
+    if  params[:q][:job_status_eq] == "0"
+      params[:q][:job_status_eq] = ""
+    end
     # 検索オブジェクト
     @q = User.ransack(params[:q])
     # 検索結果
-    @results = @q.result(distinct: true)
+    @results = @q.result(distinct: true).page(params[:page]).reverse_order
   end
 
   private
