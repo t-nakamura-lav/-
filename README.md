@@ -1,4 +1,4 @@
-# ゆるわーく
+# ゆるわーく &emsp;&emsp; http://xn--y8jyfpaq95c.com/
 
 ## サイトテーマ
 「仕事や勉強をがんばっている人たちがつながる」サイト.
@@ -36,8 +36,13 @@
 仕事・勉強の前後、休憩中
 
 ### 使い方
+1. 「きろく」に、勉強や仕事などがんばった内容を書こう！
 ![スライド2](https://user-images.githubusercontent.com/83739452/131210647-8188e45c-87b3-4ede-9056-246d6b80341d.JPG)
+
+2. 「ほーむ」で、自分や他の人のがんばりを確認！
 ![スライド3](https://user-images.githubusercontent.com/83739452/131210651-ca937fc6-7f2f-4f5e-b1b7-21644d58de71.JPG)
+
+3. 「Myカレンダー」で、今日もがんばった自分に小さなごほうびスタンプを押そう！
 ![スライド4](https://user-images.githubusercontent.com/83739452/131210655-97d3623d-3053-4f7f-9119-56db4071c242.JPG)
 
 
