@@ -39,10 +39,7 @@
           </tbody>
           <tbody>
             <tr>
-              <td>
-                <%= f.radio_button :stamp_type, "white.jpg" %>
-                <%= image_tag 'white.jpg', class: 'stamp1' %>
-              </td>
+              <td></td>
               <td class='text-center'><br>
                <%= f.submit "保存", class: "btn btn-info save col-xs-6" %>
               </td>
@@ -57,7 +54,9 @@
 
         <% calendars.each do |calendar| %>
           <div>
+            <%= link_to calendar_path(calendar),method: :delete,data: {confirm: "このスタンプを削除しますか？"} do %>
               <%= image_tag calendar.stamp_type, class: 'stamp2' %>
+            <% end %>
           </div>
         <% end %>
       <% end %>
