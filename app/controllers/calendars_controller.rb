@@ -31,7 +31,6 @@ class CalendarsController < ApplicationController
     redirect_to calendars_path
   end
 
-
   private
 
   def calendar_params
