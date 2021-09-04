@@ -41,4 +41,5 @@ Rails.application.routes.draw do
   # post=URLが保存不可、get=URL保存可
 
   resources :calendars, only: [:create, :index, :destroy]
+  resources :notifications, only: :index
 end
