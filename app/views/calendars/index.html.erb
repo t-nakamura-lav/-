@@ -24,8 +24,6 @@
                 <%= image_tag 'stamp4.jpg', class: 'stamp1' %>
               </td>
             </tr>
-          </tbody>
-          <tbody>
             <tr>
               <td>
                 <%= f.radio_button :stamp_type, "stamp3.jpg" %>
@@ -36,13 +34,13 @@
                 <%= image_tag 'stamp2.jpg', class: 'stamp1' %>
               </td>
             </tr>
-          </tbody>
-          <tbody>
             <tr>
               <td></td>
               <td class='text-center'><br>
                <%= f.submit "保存", class: "btn btn-info save col-xs-6" %>
               </td>
+            </tr>
+          </tbody>
       <% end %>
         </table>
     </div>

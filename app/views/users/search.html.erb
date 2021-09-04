@@ -32,9 +32,7 @@
                 <%= f.radio_button :age_status_eq, 5 %> 社会人&emsp;
               </td>
             </tr>
-          </tbody>
-
-          <tbody>
+         
             <tr>
               <th>
                 <%= f.label :"職種" %>
@@ -44,9 +42,7 @@
                 <%= f.select :job_status_eq, User.job_statuses, {} %>
               </td>
             </tr>
-          </tbody>
-
-          <tbody>
+          
             <tr>
               <th>
                 <%= f.label :"がんばっていること、自己紹介文" %>
@@ -55,9 +51,7 @@
                 <%= f.search_field :introduction_or_challenge_contents_cont %>
               </td>
             </tr>
-          </tbody>
-
-          <tbody>
+          
             <tr>
               <td colspan=2 class="actions text-right">
               <%= f.submit "検索結果へＧＯ！", class: "btn btn-outline-info col-xs-6" %>

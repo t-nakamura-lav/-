@@ -36,15 +36,11 @@
               <%= tweet.hour_attribute %>時間　<%= tweet.minute_attribute %>分
             </td>
           </tr>
-        </tbody>
 
-        <tbody>
           <tr>
             <td colspan="2"><%= tweet.tweet %></td>
           </tr>
-        </tbody>
 
-        <tbody>
           <tr>
             <td colspan="2"><% if tweet.images.attached? %>
                   <% tweet.images.each do |image| %>
@@ -53,9 +49,7 @@
                 <% end %>
             </td>
           </tr>
-        </tbody>
 
-        <tbody>
           <tr>
             <td>
               <%= link_to tweet_path(tweet) do %>
