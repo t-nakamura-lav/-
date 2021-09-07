@@ -8,6 +8,8 @@ class CommentsController < ApplicationController
     comment.tweet_id = @tweet.id
     comment.save
     # redirect_to tweet_path(tweet) 非同期通信化
+    # ↓通知作成メソッドの呼び出し
+    @tweet.create_notification_comment!(current_user, @comment.id)
   end
 
   def destroy
