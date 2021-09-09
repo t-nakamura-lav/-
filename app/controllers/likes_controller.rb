@@ -5,8 +5,6 @@ class LikesController < ApplicationController
     like.save
     # redirect_to tweet_path(tweet) 非同期通信化
     # app/views/likes/create.js.erbを参照
-    # ↓通知の作成
-    @tweet.create_notification_by(current_user)
   end
 
   def destroy
